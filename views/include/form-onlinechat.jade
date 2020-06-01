@@ -1,0 +1,18 @@
+div.Mask
+div.Window.Callback(id="form-onlinechat")
+	div.Header Online консультант
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Form(action="/savechat")
+			div.Field
+				div.Label Ответ
+				div.Answer(id="OnlineChatAnswer", style="width: 500px; height: 80px;")
+			div.Field
+				div.Label Вопрос
+				textarea(id="OnlineChatQuestion", class="Input, Question", name="question", style="width: 500px; height: 80px;")
+		div.Control
+			div.Buttons(align="right")
+				div.Button
+					div.Border(onclick="Main.Chat.OnClickSend(this);") Отправить
+				div.Button
+					div.Border(onclick="Main.Chat.OnClickClose('form-onlinechat');") Отменить

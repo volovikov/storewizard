@@ -1,0 +1,70 @@
+<div class="Mask"></div>
+<div class="Window Calculate" id="calculate-advertising">
+	<div class="Header">
+		Расчет стоимости
+		<div class="Button Close" title="Закрыть окно" onclick="Main.Window.OnClickClose(this);"></div>
+	</div>
+	<div class="Body">
+		<div class="Form">
+			<div class="Field">
+				<div class="Label">Выберите продукт</div>
+				<div class="Select">
+					<input type="hidden" value="advertising" name="product" class="Hidden">
+					<input type="text" value="Рекламный бизнес" style="width: 203px;" readonly class="Visible">
+					<div class="Popup">
+						<div class="Trigger" onclick="Main.Calculate.OnClickTrigger(this);"></div>
+						<div class="Options" style="width: 226px; margin-left: -214px; margin-top: -4px">
+							<div class="Item" value="homewallet" display="Домашний кошелек" onclick="Main.Calculate.OnClickItem(this);">Домашний кошелек</div>
+							<div class="Item" value="advertising" display="Рекламный бизнес" onclick="Main.Calculate.OnClickItem(this);">Рекламный бизнес</div>
+							<div class="Item" value="realtor" display="Риэлтор" onclick="Main.Calculate.OnClickItem(this);">Риэлтор</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="Field">
+				<div class="Label">На срок</div>
+				<div class="Select">
+					<input type="hidden" value="1" name="product" class="Hidden">
+					<input type="text" value="Один месяц" style="width: 203px;" readonly class="Visible">
+					<div class="Popup">
+						<div class="Trigger" onclick="Main.Calculate.OnClickTrigger(this);"></div>
+						<div class="Options" style="width: 226px; margin-left: -214px; margin-top: -4px">
+							<div class="Item" value="1" display="Один месяц" onclick="Main.Calculate.OnClickItem(this);">Один месяц</div>
+							<div class="Item" value="2" display="Три месяца" onclick="Main.Calculate.OnClickItem(this);">Три месяца</div>
+							<div class="Item" value="6" display="Пол года" onclick="Main.Calculate.OnClickItem(this);">Пол года</div>
+							<div class="Item" value="12" display="Один год" onclick="Main.Calculate.OnClickItem(this);">Один год</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Field">
+				<div class="Label">Результат</div>
+				<div class="Summary">
+					<div class="Row" style="border-bottom: solid 1px white; line-height: 30px;">
+						<div class="Col" style="width:40%">Итого</div>
+						<div class="Col" style="width:40%">В месяц</div>
+						<div class="Col" style="width:18%">Скидка</div>
+					</div>
+					<div class="Row" style="line-height: 30px;">
+						<div class="Col" style="width:40%">2023 руб.</div>
+						<div class="Col" style="width:40%">203 руб.</div>
+						<div class="Col" style="width:18%">15%</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="Control">
+			<div class="Buttons" align="right">
+				<div class="Button">
+					<div class="Border">Приобрести</div>
+				</div>
+				<div class="Button">
+					<div class="Border">Попробовать</div>
+				</div>							
+				<div class="Button">
+					<div class="Border" onclick="Main.Window.Close('calculate-advertising');">Отменить</div>
+				</div>											
+			</div>
+		</div>
+	</div>
+</div>			

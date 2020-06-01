@@ -1,0 +1,112 @@
+- locals.pageTitle = "Что такое storewizard?"
+	div.Center
+		div.Logotip(onclick="location.href='/'")
+		div.PrivateRoom
+			div.Item.Favorite(onclick="Main.OnClickFavorite(this);")
+			div.Item.Mailto(onclick="Main.Window.Open('form-callback');")
+			div.Item.Enter личный кабинет
+		div.Separator
+		div.TopMenu
+			div.Item.Active
+				a(href="/", title="home") В начало
+			div.Item
+				a(href="/solution/", title="solution") Решения
+			div.Item
+				a(href="/support/", title="support") Поддержка
+			div.Item
+				a(href="/blog/", title="blog") Блог
+		div.TabPanel
+			div.Header
+				div.Item.Active(onclick="Main.TabPanel.OnClickTab(0);", title="home-about") Что такое storewizard?
+				div.Item(onclick="Main.TabPanel.OnClickTab(1);", title="home-wizard") Проектируйте, это просто!
+				div.Item(onclick="Main.TabPanel.OnClickTab(2);", title="home-store") Управляйте, это легко!
+				div.Item(onclick="Main.TabPanel.OnClickTab(3);", title="home-saas") Программа в аренду
+				div.Item(onclick="Main.TabPanel.OnClickTab(4);", title="home-realweb") Все здесь и сейчас
+				div.Item(onclick="Main.TabPanel.OnClickTab(5);", title="home-mobile") У нас есть iPhone!
+			div.Body
+				div.Item.Active
+					h1 Что такое storewizard?
+					div.Block
+						p Это универсальная программа для автоматизации любой вашей деятельности которая состоит из двух частей: хранилище и мастера.
+						p Это гибкая программа. Благодаря данному свойству она уже адаптирована под вас и ваш бизнес.
+						p Это простая программа. Вы умеете пользоваться ОС Windows? Больше вам знать ничего не надо. Вы все умеете!
+						p Это готовая программа. Вы просто берёте ее в аренду.  Платите ровно столько, сколько вы ей пользуйтесь. И ни копейкой больше!
+						div.Icon.Video(title="Смотреть видео", onclick="Main.Window.Open('video-concept');")
+						div.Icon.Presentation(title="Смотреть презентацию", onclick="Main.Window.Open('presentation-concept');")
+					div.Picture
+						img(src=offset+"/images/storewizard-screenshot-1.png")
+				div.Item
+					h1 Проектируйте, это просто!
+					div.Block
+						p У вас появился новый отдел или вы хотите помечать новых клиентов желтым цветом? Что делать, если типовая конфигурация не имеет нужных свойств?
+						p Без паники! У вас есть мастер. Откройте его и последовательно, отвечая на его вопросы, измените то, что вам нужно, все что вам угодно! Вы контролируете ситуацию и ни от кого не зависите!
+						div.Icon.Video(title="Смотреть видео", onclick="Main.Window.Open('video-wizard');")
+						div.Icon.Presentation(title="Смотреть презентацию", onclick="Main.Window.Open('presentation-wizard');")
+					div.Picture
+						img(src=offset+"/images/storewizard-screenshot-3.png")
+				div.Item
+					h1 Управляйте, это легко!
+					div.Block
+						p Поверьте, вы все уже умеете! Просто используйте ваши навыки работы с операционной системой Window и этого будет достаточно!
+						p Информацию можно сортировать, просто нажмите на заголовок колонки. Вы что то хотите найти? К вашим услугам фильтр! Вы не помните что именно искать? Просто введите в поле поиска примерное значение и система сама все найдет
+						p Вы хотите сделать колонку Имя шире? Сделайте это! Вы хотите убрать колонку контакты, она вам мешает? Легко! Вы здесь хозяин и ни кто другой.
+						div.Icon.Video(title="Смотреть видео", onclick="Main.Window.Open('video-store');")
+						div.Icon.Presentation(title="Смотреть презентацию", onclick="Main.Window.Open('presentation-store');")
+					div.Picture
+						img(src=offset+"/images/storewizard-screenshot-4.png")
+				div.Item
+					h1 Программа в аренду!
+					div.Block
+						p Забудьте про лицензию, про внедрение, настройку, обслуживание и обновление. Все это в прошлом. Вы платите только за услугу, за время в течении которого вы будете пользоваться программой. Один месяц, три месяца, год - решать вам.  Все остальное - наши проблемы!
+						p​Воспользуйтесь нашим калькулятором, для того, чтобы рассчитать стоимость своих затрат. К оплате принимаются все виды пластиковых карт, а также все виды электронных денег. Все быстро и просто.
+						div.Icon.Video(title="Смотреть видео", onclick="Main.Window.Open('video-saas');")
+						div.Icon.Presentation(title="Смотреть презентацию", onclick="Main.Window.Open('presentation-saas');")
+					div.Picture
+						img(src=offset+"/images/storewizard-saas.png")
+				div.Item
+					h1 Все здесь и сейчас!
+					p(style="margin-bottom: 15px; font: normal 18px 'PTSansRegular', Arial;") Не ждите у моря погоды! Не нужно нажимать F5 постоянно чтобы обновить экран. Вся информация придет сразу же, как только она будет добавлена. И не важно пользуетесь вы мобильным телефоном или обычным компьютером!
+					img(src=offset+"/images/storewizard-screenshot-5.png", onclick="Main.Window.Open('presentation-realtime');", style="cursor:pointer;")
+				div.Item
+					h1 У меня есть iPhone!
+					div.Block
+						p Отлично! А у нас есть приложение для iPhone! А еще есть приложение для iPad и OS Android, как для мобильного телефона, так и для планшета. Интересно?
+						p А еще, в случае если вы используя мобильное приложение, совершите любую операцию, она тут же отразиться во всех копиях программы: на компьютере, на планшете, на смартфоне и т.д.
+						div.Icon.Video(title="Смотреть видео", onclick="Main.Window.Open('video-mobile');")
+						div.Icon.Presentation(title="Смотреть презентацию", onclick="Main.Window.Open('presentation-mobile');")
+					div.Picture(style="margin-top: -30px;")
+						img(src=offset+"/images/storewizard-mobile.png")
+		div.SocialNetwork(align="center")
+			div.Item.Feed
+			div.Item.Facebook
+			div.Item.Twitter
+			div.Item.VK
+		div.Production			
+				- products.forEach(function(item) {
+					div.Item
+						div(style="background:url("+offset+"#{item.picture}) no-repeat center 60px")
+							div.Title
+								h2= item.name
+							div.Description= item.description
+							div.Control(align="center")
+								div.Item.Video(title="Видео", onclick="Main.Window.Open('video-homewallet');")
+								div.Item.Presentation(title="Презентация", onclick="Main.Window.Open('presentation-#{item.key}');")
+								div.Item.Price(title="Сколько стоит?", onclick="Main.Window.Open('calculate');")
+								div.Item.Take(title="Зарегистрироваться", onclick="Main.Window.Open('register');")
+				- });
+	div.Popup
+		include include/presentation-homewallet
+		include include/presentation-trade
+		include include/presentation-site
+		include include/presentation-general
+		include include/presentation-concept
+		include include/presentation-store
+		include include/presentation-wizard
+		include include/presentation-saas
+		include include/presentation-realtime
+		include include/presentation-mobile		
+		include include/form-callback
+		include include/form-calculate
+		include include/form-register
+		include include/form-onlinechat
+		include include/messages

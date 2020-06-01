@@ -1,0 +1,76 @@
+div.Mask
+div.Window.Presentation(id="presentation-concept-realtor")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				div.Slide
+					h1 Концепция работы
+					h2 На примере риэлторского агентства
+					p Что самое важное в работе риэлтора? Правильно - оперативность и мобильность. Важно иметь самую свежую и достоверную информацию. Важно быстро и точно на нее реагировать.
+					div
+						img(src=offset+"images/presentation-concept-realtor-1.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере риэлторского агентства
+					p Но как организовать такую работу? Как объединить всю поступающую информацию из совершенно разных источников и оперативно донести до агентов?
+					div
+						img(src=offset+"images/presentation-concept-realtor-2.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере риэлторского агентства
+					p Вам нужна информационная среда, которая бы позволила вам работать всем вместе, на любых устройствах, в режиме реального времени. Среда, которую легко настроить под вас, под ваши процессы!
+					div
+						img(src=offset+"images/presentation-concept-realtor-3.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере риэлторского агентства
+					p Информация от оператора или из сайта попадает в программу. Она автоматически становится доступна всем вашим агентам. Агенты оперативно реагируют. Это и есть storewizard!
+					div
+						img(src=offset+"images/presentation-concept-realtor-4.png")
+				div.Slide
+					h1 Концепция работы
+					h2 В итоге
+					ul
+						li Вы экономите на офисе. Ваши агенты мобильны и оперативны!
+						li Вы и ваши агенты видят статистику мгновенно. Прозрачная схема оплаты
+						li Вы не покупаете ни какого специального оборудование, телефон или планшет - все что нужно агенту для работы. Минимальные первоначальные вложения
+				div.Slide
+					h1 Концепция работы
+					h2 Что дальше?
+					ul
+						li Вы можете ознакомится подробней с тем, как программа выглядет и как работает 
+							a(href="javascript: Main.Window.Open('presentation-general', true)") нажав здесь
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.RealtorConceptSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.RealtorConceptSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.RealtorConceptSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.RealtorConceptSlider.OnClickEnd();")
+script
+	Main.RealtorConceptSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.RealtorConceptSlider, '#presentation-concept-realtor');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.RealtorConceptSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.RealtorConceptSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.RealtorConceptSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.RealtorConceptSlider);
+		}		
+	}

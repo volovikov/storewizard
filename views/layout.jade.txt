@@ -1,0 +1,15 @@
+!!! html
+html
+	head
+		if locals.pageTitle
+			title= pageTitle
+			link(href=offset+'css/style.css', rel='stylesheet', type='text/css')
+			link(rel='icon', type='image/png', href=offset+'favicon.png')
+			script(src=offset+'js/jquery.min.js')
+			script(src=offset+'js/main.js')
+			script(src='/socket.io/socket.io.js')
+	body
+		div(class="OnlineChat Offline", title="Online консультант", onclick="Main.Window.Open('form-onlinechat')") Online консультант
+!= body
+						
+

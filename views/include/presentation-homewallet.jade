@@ -1,0 +1,86 @@
+div.Mask
+div.Window.Presentation(id="presentation-homewallet")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				div.Slide
+					h1 Домашний кошелёк
+					h2 Введение
+					p Домашний кошелёк, это специальная конфигурация storewizard для организации домашней бухгалтерии. Конфигурация имеет ряд особенностей:
+					ul 
+						li В ее состав не входит Мастер, вы не сможете добавить вкладку и/или добавить новое поле
+						li И наоборот, в его состав входят две дополнительные вкладки: Доход и Расход. В этих разделах программа автоматически ведет суммарный подсчет всех расходов и доходов вашей семьи
+				div.Slide 
+					h1 Домашний кошелёк
+					h2 Пользователи
+					p Количество пользователей Домашнего кошелька не ограничено. Им могут пользоваться также и ваши родственники
+					div
+						img(src=offset+"images/presentation-homewallet-1.png")
+				div.Slide 
+					h1 Домашний кошелёк
+					h2 Категории и подкатегории
+					p Как узнать сколько вы тратите на машину в целом и на бензин отдельно? Заведите категорию Машина и подкатегорию Бензин. Расход будет рассчитан и для категории в целом и для всех подкатегорий
+					div
+						img(src=offset+"images/presentation-homewallet-2.png")
+				div.Slide 
+					h1 Домашний кошелёк
+					h2 Расход доход
+					p Программа сама считает ваш Доход и Расход. Группы можно свернуть, в случае если нужна более общая информация и развернуть, если нужны детали
+					div
+						img(src=offset+"images/presentation-homewallet-5.png")
+				div.Slide
+					h1 Домашний кошелёк
+					h2 Контакты
+					p Используйте Домашний кошелёк, чтобы хранить ваши контакты! Телефон могут украсть, как потом восстановить контакты?
+					div
+						img(src=offset+"images/presentation-homewallet-3.png")
+				div.Slide 
+					h1 Домашний кошелёк
+					h2 Мобильная версия
+					p Очень удобно добавить очередной расход прямо с телефона. Сделайте это! Тем более, что ваша вторая половина увидит это тут же
+					div
+						img(src=offset+"images/presentation-homewallet-4.png")
+				div.Slide
+					h1 Домашний кошелёк
+					h2 Что дальше?
+					ul
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-store', true)") Хранилище
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-wizard', true)") Мастере
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-mobile', true)") Мобильной версии программы
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.HomewalletSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.HomewalletSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.HomewalletSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.HomewalletSlider.OnClickEnd();")
+script
+	Main.HomewalletSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.HomewalletSlider, '#presentation-homewallet');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.HomewalletSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.HomewalletSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.HomewalletSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.HomewalletSlider);
+		}		
+	}

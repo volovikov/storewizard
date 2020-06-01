@@ -1,0 +1,33 @@
+div.Mask
+div.Window.Callback(id="form-callback")
+	div.Header Форма обратной связи
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Form(action="/callback/")
+			div.Field
+				div.Label Выберите действие
+				div.Select
+					input(type="hidden", value="Отзывы", name="type", class="Hidden Input")
+					input(type="text", value="Отзывы", style="width: 203px;", readonly="readonly", class="Visible")
+					div.Popup
+						div.Trigger(onclick="Main.Select.OnClickTrigger(this);")
+						div.Options(style="width: 226px; margin-left: -228px; margin-top: 21px")
+							div.Item(value="Отзывы", display="Отзывы", onclick="Main.Select.OnClickItem(this);") Отзывы
+							div.Item(value="Вопрос ответ", display="Вопрос ответ", onclick="Main.Select.OnClickItem(this);") Вопрос ответ
+							div.Item(value="Предложения", display="Предложения", onclick="Main.Select.OnClickItem(this);") Предложения
+							div.Item(value="Сообщение об ошибке", display="Сообщение об ошибке", onclick="Main.Select.OnClickItem(this);") Сообщение об ошибке
+			div.Field
+				div.Label Фамилия, имя
+				input(class="Input", type="text", name="name")
+			div.Field
+				div.Label Адрес электронной почты
+				input(class="Input", type="text", name="email")
+			div.Field
+				div.Label Сообщение
+				textarea(class="Input", name="text", style="width: 500px; height: 80px;")
+		div.Control
+			div.Buttons(align="right")
+				div.Button
+					div.Border(onclick="Main.Form.OnClickSubmit(this);") Сохранить
+				div.Button
+					div.Border(onclick="Main.Window.Close('form-callback');") Отменить

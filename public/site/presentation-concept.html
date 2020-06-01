@@ -1,0 +1,68 @@
+<div class="Mask"></div>
+<div class="Window Presentation" id="presentation-general">
+	<div class="Header">
+		Презентация
+		<div class="Button Close" title="Закрыть окно" onclick="Main.Window.OnClickClose(this);"></div>
+	</div>
+	<div class="Body">
+		<div class="Display">
+			<div class="Tape">
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Введение</h2>
+					<p>Это универсальная программа для автоматизации любой вашей деятельности которая состоит из двух частей: хранилище и мастера.</p>
+					<p>Задача хранилища управлять информацией. Добавить, удалить, изменить. В состав хранилища также входит модуль поиска информации. </p>
+					<p>Задача мастера организация информации. Мастер может добавить, удалить изменить вкладку. Может манипулировать колонками во вкладке. Добавить колонку, удалить или изменить ее свойства.</p>
+				</div>
+				<div class="Slide" id="presentation-general-slides">
+					<script>
+							Main.Load([
+								'presentation-store-slides.html',
+								'presentation-wizard-slides.html',
+								'presentation-saas-slides.html',
+								'presentation-realtime-slides.html',
+								'presentation-mobile-slides.html',
+							], '#presentation-general-slides');
+					</script>
+				</div>
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Что дальше?</h2>
+					<ul>
+						<li>Вы можете открыть <a href="javascript: Main.Window.Open('calculate-homewallet')">Калькулятор</a> и прикинуть сколько это будет стоить</li>
+						<li>Вы можете попробовать программу, открыть ее <a href="demo.storewizard.ru">демоверсию</a></li>
+						<li>Вы можете прочитать <a href="support.html">отзывы</a> о программе и</li>
+						<li>Вы можете <a href="javascript: Main.Window.Open('registration-store')">приобрести</a> программу</li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+		<div class="Control">
+			<div class="Buttons" align="center">
+				<div class="Icon Begin" onclick="Main.GeneralSlider.OnClickBegin();"></div>
+				<div class="Icon Back" onclick="Main.GeneralSlider.OnClickBack();"></div>
+				<div class="Icon Forward" onclick="Main.GeneralSlider.OnClickForward();"></div>
+				<div class="Icon End" onclick="Main.GeneralSlider.OnClickEnd();"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	Main.GeneralSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.GeneralSlider, '#presentation-general');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.GeneralSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.GeneralSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.GeneralSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.GeneralSlider);
+		}		
+	}
+</script>

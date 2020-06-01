@@ -1,0 +1,470 @@
+<html>
+  <head>
+    <title>TribecaCarPc Emulator</title>
+    <script src="carpc/jquery-1.7.1.min.js"></script>
+    <script src="carpc/ajaxfileupload.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="carpc/chartist.min.js"></script>
+    <link rel="stylesheet" href="carpc/chartist.min.css">
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Consolas';
+        }
+        table {
+            width: 100%;
+            height: 100%;
+        }
+        table tr td {
+            background-color: #dddddd;
+            padding: 5px;
+            vertical-align: top;
+            font-size: 14px;
+            text-align: center;
+            width: 25%
+        }
+        table tr td span {
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        table tr td div {
+            font-size: 42px;
+        }
+        .monitor {
+            background-color: black;
+            color: white;
+        }
+        table.monitor tr td {
+            background-color: black;
+            vertical-align: middle;
+        }
+        .cdrom, .rounded {
+            background-color: white;
+            border-radius: 18px;
+            color: black;
+            padding: 0 5px;
+        }
+        #log-hex, #log-hex span {
+            font-size: 11px;
+            text-align: left;
+            height: 100%;
+            overflow-y: auto;
+        }
+        #log-asc {
+            text-align: left;
+            font-size: 11px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        #magnitola-text div {
+            width: 100%;
+        }
+        #magnitola-text, #magnitola-property {
+            vertical-align: top;
+        }
+        .c {
+            position: absolute;
+        }
+        .blue-1 {
+            stroke: #0E53A7;
+        }
+        .blue-2 {
+            stroke: #4284D3;
+        }
+    </style>
+  </head>
+  <body>
+    <table>
+        <tr style="height:60%">
+            <td style="width:70%">
+                <table class="monitor">
+                    <tr style="height: 25%">
+                        <td id="cd" style="width:20%">
+
+                        </td>
+                        <td colspan="2" id="folder" style="width:60%">
+                            <!--
+                            <span>folder</span>
+                            -->
+                        </td>
+                        <td  style="width:25%">
+                            <div id="clock"></div>
+                        </td>
+                    </tr>
+                    <tr style="height: 20%;">
+                        <td>
+
+                        </td>
+                        <td colspan="2" id="magnitola-text" valign="bottom">
+
+                        </td>
+                        <td id="magnitola-property">
+
+                        </td>
+                    </tr>
+                    <tr style="height: 50%">
+                        <td id="temperature">
+                            <div class="c ct-chart">
+
+                            </div>
+                            <div class="v">
+
+                            </div>
+                        </td>
+                        <td id="range-and-dest">
+                            <div align="center" class="c ct-chart">
+
+                            </div>
+                            <div class="v">
+
+                            </div>
+                        </td>
+                        <td id="accel-and-rpm">
+                            <div class="c ct-chart">
+
+                            </div>
+                            <div class="v">
+
+                            </div>
+                        </td>
+                        <td id="consumption">
+                            <div class="c ct-chart">
+
+                            </div>
+                            <div class="v">
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <form name="upload">
+                              <input type="file" name="myfile">
+                              <input type="submit" value="Загрузить">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Непосредственно команды в hex</label>
+                            <form name="uploadBlock">
+                                <textarea name="myblock" style="width:100%; height: 150px"></textarea>
+                                <input type="submit" value="Загрузить">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="log-hex"></div>
+            </td>
+            <td>
+                <div id="log-asc"></div>
+            </td>
+        </tr>
+    </table>
+    <script>
+        var CarPc = function() {
+            var that = this;
+
+            this.charUi = true;
+            this.maxRange = 600;
+            this.maxAccel = 100;
+            this.autoType = 'euro'; // usa | euro
+            this.socket = io.connect('storewizard.ru:8989');
+            this.setSocketListeners();
+            that.socket.emit('client-set-auto-type', this.autoType);
+            that.socket.emit('client-time-request');
+        };
+        CarPc.prototype._h2a = function(hex) {
+            var hex = hex.toString(),
+                str = '';
+
+            for (var i = 0; i < hex.length; i += 2)
+                str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+            return str;
+        };
+        CarPc.prototype._a2h = function(str) {
+            var arr = [];
+
+            for (var i = 0, l = str.length; i < l; i ++) {
+                var hex = Number(str.charCodeAt(i)).toString(16);
+                arr.push(hex);
+            }
+            return arr.join('');
+        };
+        CarPc.prototype.drawStereoStatus = function(data) {
+            var el = $('#magnitola-property');
+
+            if (el) {
+                if (data.stereo) {
+                    el.html('<span>stereo</span>')
+                } else {
+                    el.html('');
+                }
+            }
+        };
+        CarPc.prototype.drawCdStatus = function(data) {
+            var el = $('#cd'),
+                html = [];
+
+            if (el) {
+                if (!data.disk) {
+                    return;
+                } else if (data.disk.length) {
+                    html.push('<span>cd-rom</span> ');
+
+                    data.disk.forEach(function(i) {
+                        html.push('<span class="cdrom">' + i + '</span> ');
+                    });
+                    el.html(html.join(''));
+                } else {
+                    el.html('');
+                }
+            }
+        };
+        CarPc.prototype.drawTime = function(timeFromServer) {
+            var el = $('#clock'),
+                oneMinute = 1000;
+
+            if (el) {
+                el.html('<span>clock</span><div>' + timeFromServer + '</div>');
+            }
+            if (!this.timerClock) {
+                this.timerClock = setInterval(function() {
+                    var d = new Date(),
+                        h = d.getHours(),
+                        m = d.getMinutes();
+
+                    if (h < 10) {
+                        h = '0' + h;
+                    }
+                    if (m < 10) {
+                        m = '0' + m;
+                    }
+                    el.html('<span>clock</span><div>' + h + ':' + m + '</div>');
+                }, oneMinute);
+            }
+        };
+        CarPc.prototype.drawCanCons = function(data) {
+            var el = $('#consumption'),
+                d = '';
+
+            if (el) {
+                if (data.currentTrip == 'A') {
+                    d = data.tripA;
+                } else {
+                    d = data.tripB;
+                }
+                el.html('<span>fuel cons.</span><div>' + d + '<span>L/100</span>');
+            }
+        };
+        CarPc.prototype.drawCanTemperature = function(data) {
+            var el = $('#temperature');
+
+            if (el) {
+                el.html('<span>out.temp</span><div>' + data + '&deg;C</div>');
+            }
+        };
+        CarPc.prototype.drawCanRangeAndDest = function(data) {
+            var el = $('#range-and-dest'),
+                v = el.find('.v'),
+                c = el.find('.c'),
+                p = c.parent();
+
+            if (el) {
+                v.html('<span>range</span><div>' + data.range + '<span>km</span></div>');
+
+                if (this.charUi) {
+                    c.css('height', p.css('height')).css('width', p.css('width'));
+                    c.css('top', p.position().top + 7);
+
+                    new Chartist.Pie(c[0], {
+                        series: [data.range, this.maxRange - data.range]
+                    },{
+                        donut: true,
+                        donutWidth: 20,
+                        startAngle: -90,
+                        total: this.maxRange,
+                        showLabel: false
+                    });
+                }
+            }
+
+        };
+        CarPc.prototype.drawCanAccelAndRpm = function(data) {
+            var el = $('#accel-and-rpm'),
+                v = el.find('.v'),
+                c = el.find('.c'),
+                p = c.parent();
+
+            if (el) {
+                v.html('<span>accel</span><div>' + data.accel + '<span>%</span></div>');
+
+                if (this.charUi) {
+                    c.css('height', p.css('height')).css('width', p.css('width'));
+                    c.css('top', p.position().top + 7);
+
+                    new Chartist.Pie(c[0], {
+                        series: [data.accel, this.maxAccel - data.accel]
+                    },{
+                        donut: true,
+                        donutWidth: 20,
+                        startAngle: -90,
+                        total: this.maxAccel,
+                        showLabel: false
+                    });
+                }
+            }
+        };
+        CarPc.prototype.drawMagnitolaText = function(data) {
+            var el = $('#magnitola-text');
+
+            if (el) {
+                el.html('<div>' + data + '</div>');
+            }
+        };
+        CarPc.prototype.drawLogInfo = function(data) {
+            var hexEl = $('#log-hex'),
+                ascEl = $('#log-asc'),
+                hexArr = data.command.match(/[\S\s]{1,2}/g),
+                comcode = '';
+
+            var getCommandCode = function(command) {
+                for (var commandName in data.knowCommand) {
+                    var commandCode = data.knowCommand[commandName];
+                    if (command.indexOf(commandCode) == 0) {
+                        return commandName;
+                    }
+                }
+                return false;
+            }
+            if (hexEl && ascEl) {
+                if (comcode = getCommandCode(data.command)) {
+                    hexEl.append('<span title="' + comcode + '" style="background-color: yellow">' + hexArr.join(' ') + '</span><br>');
+                } else {
+                    hexEl.append(hexArr.join(' ') + '<br>');
+                }
+                ascEl.append(this._h2a(data.command) + '<br>');
+                hexEl.scrollTop(hexEl[0].scrollHeight);
+                ascEl.scrollTop(ascEl[0].scrollHeight);
+            }
+        };
+        CarPc.prototype.eraseLog = function() {
+            var hexEl = $('#log-hex'),
+                ascEl = $('#log-asc');
+
+            hexEl.html('');
+            ascEl.html('');
+        };
+        CarPc.prototype.sendLogFile = function() {
+            var input = $('input[name="myfile"]'),
+                file = input.prop('files')[0],
+                xhr = new XMLHttpRequest();
+
+            xhr.onload = xhr.onerror = function() {
+                if (this.status == 200) {
+                    console.log("success");
+                } else {
+                    console.log("error " + this.status);
+                }
+            };
+            xhr.open("POST", "/log/upload", true);
+            xhr.send(file);
+        };
+        CarPc.prototype.sendLogCommand = function() {
+            var textarea = $('textarea[name="myblock"]');
+
+            $.ajax({
+                url: '/log/uploadBlock',
+                type: 'post',
+                data: {
+                    logBlockText: textarea.val()
+                },
+                success: function(r) {
+                    console.log(r);
+                },
+                error: function() {
+
+                }
+            });
+        };
+        CarPc.prototype.setSocketListeners = function() {
+            var that = this;
+
+            this.socket.on('command-can-write-accel-and-rpm', function(data) {
+                that.drawCanAccelAndRpm(data);
+            });
+            this.socket.on('command-can-write-range-and-dist', function(data) {
+                that.drawCanRangeAndDest(data);
+            });
+            this.socket.on('command-can-write-fuel-cons', function(data) {
+                that.drawCanCons(data);
+            });
+            this.socket.on('command-can-write-temperature', function(data) {
+                that.drawCanTemperature(data);
+            });
+            this.socket.on('command-magnitola-write', function(data) {
+                if (data.magnitolaMode == 'radio' && data.wave ) {
+                    if (data.channel) {
+                        that.drawMagnitolaText(data.wave + '-' + data.channel + ' ' + data.text);
+                    } else {
+                        that.drawMagnitolaText(data.wave + ' ' + data.text);
+                    }
+                    that.drawStereoStatus(data);
+                }
+                that.drawCdStatus(data);
+            });
+            this.socket.on('command-magnitola-write-volume', function(data) {
+                that.drawMagnitolaText(data);
+            });
+            this.socket.on('command-magnitola-write-cd', function(data) {
+                that.drawMagnitolaText(data);
+                that.drawStereoStatus({
+                    stereo: null
+                });
+            });
+            this.socket.on('command-magnitola-off', function() {
+                that.drawMagnitolaText('MAGNITOLA OFF');
+            });
+            this.socket.on('server-time-response', function(data) {
+                that.drawTime(data);
+            });
+            this.socket.on('server-command-match', function(data) {
+                that.drawLogInfo(data);
+            });
+            //this.socket.on('emulator-write-raw-data', function(data) {
+              //  carPc.drawLogInfo(data);
+            //});
+        };
+        $(document).ready(function() {
+            carPc = new CarPc();
+
+            $('input[name="myfile"]').on('change', function() {
+                carPc.eraseLog();
+            });
+            $('textarea[name="myblock"]').on('change paste keyup', function() {
+                $(this).val($(this).val().replace(/\s+/g, ''));
+            })
+            $('form[name="upload"]').on('submit', function() {
+                carPc.eraseLog();
+                carPc.sendLogFile();
+                return false;
+            });
+            $('form[name="uploadBlock"]').on('submit', function() {
+                carPc.eraseLog();
+                carPc.sendLogCommand();
+                return false;
+            });
+        });
+    </script>
+  </body>
+</html>

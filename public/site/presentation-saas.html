@@ -1,0 +1,56 @@
+<div class="Mask"></div>
+<div class="Window Presentation" id="presentation-saas">
+	<div class="Header">
+		Презентация
+		<div class="Button Close" title="Закрыть окно" onclick="Main.Window.OnClickClose(this);"></div>
+	</div>
+	<div class="Body">
+		<div class="Display">
+			<div class="Tape">
+				<div class="Slide" id="presentation-saas-slides">
+					<script>Main.Load(['presentation-saas-slides.html'], '#presentation-saas-slides');</script>
+				</div>
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Что дальше?</h2>
+					<ul>
+						<li>Вы можете узнать больше о <a href="javascript: Main.Window.Open('presentation-store', true)">Хранилище</a></li>						
+						<li>Вы можете узнать больше о <a href="javascript: Main.Window.Open('presentation-wizard', true)">Мастер</a></li>
+						<li>Вы можете узнать больше о <a href="javascript: Main.Window.Open('presentation-mobile', true)">Мобильной</a> версии программы</li>
+						<li>Вы можете открыть <a href="javascript: Main.Window.Open('calculate-homewallet', true)">Калькулятор</a> и прикинуть сколько это будет стоить</li>
+						<li>Вы можете попробовать программу, открыть ее <a href="demo.storewizard.ru">демоверсию</a></li>
+						<li>Вы можете прочитать <a href="support.html">отзывы</a> о программе</li>
+						<li>Вы можете <a href="javascript: Main.Window.Open('registration-store', true)">приобрести</a> программу</li>
+					</ul>
+				</div>						
+			</div>
+		</div>
+		<div class="Control">
+			<div class="Buttons" align="center">
+				<div class="Icon Begin" onclick="Main.SaasSlider.OnClickBegin();"></div>
+				<div class="Icon Back" onclick="Main.SaasSlider.OnClickBack();"></div>
+				<div class="Icon Forward" onclick="Main.SaasSlider.OnClickForward();"></div>
+				<div class="Icon End" onclick="Main.SaasSlider.OnClickEnd();"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	Main.SaasSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.SaasSlider, '#presentation-saas');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.SaasSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.SaasSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.SaasSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.SaasSlider);
+		}		
+	}
+</script>

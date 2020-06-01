@@ -1,0 +1,49 @@
+html
+	head
+		meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+		meta(http-equiv="Expires", content="Fri, Jan 01 1900 00:00:00 GMT")
+		meta(http-equiv="Pragma", content="no-cache")
+		meta(http-equiv="Cache-control", content="no-cache")
+		- if (pageTitle)
+			title= pageTitle
+		- else 
+			title="storewizard"					
+		link(rel="icon", type="image/png", href="favicon.png")
+		link(rel="stylesheet", type="text/css", href="desktop/css/ext-all.css")
+		link(rel="stylesheet", type="text/css", href="desktop/css/my-ext-theme.css")
+		link(rel="stylesheet", type="text/css", href="desktop/css/MultiSelect.css")		
+		link(rel="stylesheet", type="text/css", href="desktop/css/Spinner.css")	
+		- if (appType == "homewallet") 
+			link(rel="stylesheet", type="text/css", href="desktop/css/GroupSummary.css")
+		script(src="desktop/js/ext-base.js")
+		script(src="desktop/js/ext-all.js")
+		script(src="desktop/js/MultiSelect.js")
+		script(src="desktop/js/Spinner.js")
+		script(src="desktop/js/SpinnerField.js")
+		script(src="desktop/js/wizard.js")
+		script(src="desktop/js/store.js")
+		- if (appType == "homewallet")
+			script(src="desktop/js/GroupSummary.js")
+			script(src="desktop/js/homewallet.js")
+		- if (appType == "site")
+			script(src="desktop/js/site.js")
+			script(src='/socket.io/socket.io.js')
+		style
+			a {color: #385F95;}
+			.icon-add {background: url(desktop/images/icon-add.png) 0 0 no-repeat !important;} 
+			.icon-delete {background: url(desktop/images/icon-delete.png) 0 0 no-repeat !important;} 		
+			.icon-edit {background: url(desktop/images/icon-edit.png) 0 0 no-repeat !important;}
+			.icon-edit-window {background: url(desktop/images/icon-edit.png) 0 5px no-repeat !important;}
+			.icon-find {background: url(desktop/images/icon-find.png) 0 0 no-repeat !important;} 
+			.icon-find-reset {background: url(desktop/images/icon-find-reset.png) 0 0 no-repeat !important;} 		
+			.icon-privateroom {background: url(desktop/images/icon-privateroom.png) 0 0 no-repeat !important;} 		
+			.icon-exit {background: url(desktop/images/icon-exit.png) 0 0 no-repeat !important;}
+			.icon-wizard {background: url(desktop/images/icon-wizard.png) 0 0 no-repeat !important;}
+			.my-panel .x-panel-header {background: url(desktop/images/access/panel/top-bottom.gif); color: white}
+			.readonly {color: grey !important}
+			.preloader {top:47%; left:47%; background:url(desktop/images/preloader.gif) no-repeat; height: 64px; width: 64px; position: absolute;}
+	body
+		div(id="preloader", class="preloader")
+		form(id="history-form", class="x-hidden")
+			input(type="hidden", id="x-history-field")
+			iframe(id="x-history-frame")

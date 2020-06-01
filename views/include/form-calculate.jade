@@ -1,0 +1,49 @@
+div.Mask
+div.Window.Calculate(id="calculate")
+	div.Header Расчет стоимости
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Form
+			div.Field
+				div.Label Выберите продукт
+				div.Select
+					input(type="hidden", value="homewallet", name="product", class="Hidden Input")
+					input(type="text", value="Домашний кошелек", style="width: 203px;", readonly="readonly", class="Visible")
+					div.Popup
+						div.Trigger(onclick="Main.Calculate.OnClickTrigger(this);")
+						div.Options(style="width: 226px; margin-left: -228px; margin-top: 21px")
+							- products.forEach(function(item, index) {
+								div.Item(value="#{item.key}", display="#{item.name}", onclick="Main.Calculate.OnClickItem(this);") #{item.name}
+							- });
+			div.Field
+				div.Label На срок
+				div.Select
+					input(type="hidden", value="1", name="period", class="Hidden Input")
+					input(type="text", value="Один месяц", style="width: 203px;", readonly="readonly", class="Visible")
+					div.Popup
+						div.Trigger(onclick="Main.Calculate.OnClickTrigger(this);")
+						div.Options(style="width: 226px; margin-left: -228px; margin-top: 21px")
+							div.Item(value="1", display="Один месяц", onclick="Main.Calculate.OnClickItem(this);") Один месяц
+							div.Item(value="3", display="Три месяца", onclick="Main.Calculate.OnClickItem(this);") Три месяца
+							div.Item(value="6", display="Пол года", onclick="Main.Calculate.OnClickItem(this);") Пол года
+							div.Item(value="12", display="Один год", onclick="Main.Calculate.OnClickItem(this);") Один год
+			div.Field
+				div.Label Результат
+				div.Summary
+					script
+					div.Row(style="border-bottom: solid 1px white; line-height: 30px;")
+						div.Col(style="width:40%") Итого
+						div.Col(style="width:40%") В месяц
+						div.Col(style="width:18%") Скидка
+					div.Row(style="line-height: 30px;")
+						div.Col(style="width:40%") 2023 руб.
+						div.Col(style="width:40%") 203 руб.
+						div.Col(style="width:18%") 15%
+		div.Control
+			div.Buttons(align="right")
+				div.Button
+					div.Border(onclick="Main.Window.Open('register');") Приобрести
+				div.Button
+					div.Border Попробовать
+				div.Button
+					div.Border(onclick="Main.Window.OnClickClose(this);") Отменить

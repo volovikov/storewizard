@@ -1,0 +1,54 @@
+div.Mask
+div.Window.Presentation(id="presentation-general")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				div.Slide
+					h1 Что такое storewizard?
+					h2 Введение
+					p Это универсальная программа для автоматизации любой вашей деятельности которая состоит из двух частей: хранилище и мастера.
+					p Задача хранилища управлять информацией. Добавить, удалить, изменить. В состав хранилища также входит модуль поиска информации.
+					p Задача мастера организация информации. Мастер может добавить, удалить изменить вкладку. Может манипулировать колонками во вкладке. Добавить колонку, удалить или изменить ее свойства.
+				include presentation-store-slides
+				include presentation-wizard-slides
+				include presentation-saas-slides
+				include presentation-realtime-slides
+				include presentation-mobile-slides
+				div.Slide
+					h1 Что такое storewizard?
+					h2 Что дальше?
+					ul
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.GeneralSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.GeneralSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.GeneralSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.GeneralSlider.OnClickEnd();")
+script
+	Main.GeneralSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.GeneralSlider, '#presentation-general');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.GeneralSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.GeneralSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.GeneralSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.GeneralSlider);
+		}		
+	}

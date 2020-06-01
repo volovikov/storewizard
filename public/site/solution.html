@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>		
+		<div class="Center">
+			<div class="Logotip" onclick="location.href='index.html'"></div>
+			<div class="PrivateRoom">
+				<div class="Item Favorite" onclick="Main.OnClickFavorite(this);"></div>
+				<div class="Item Mailto" onclick="Main.Window.Open('form-callback');"></div>
+				<div class="Item Enter">личный кабинет</div>
+			</div>
+			<div class="Separator"></div>
+			<div class="TopMenu">
+				<div class="Item"><a href="index.html">В начало</a></div>
+				<div class="Item Active"><a href="solution.html">Решения</a></div>
+				<div class="Item"><a href="support.html">Поддержка</a></div>
+				<div class="Item"><a href="blog.html">Блог</a></div>
+			</div>			
+			<div class="TabPanel">
+				<div class="Header">
+					<div class="Item Active" onclick="Main.TabPanel.OnClickTab(0);" title="solution-homewallet">Домашний кошелек</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(1);" title="solution-advertising">Реклама</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(2);" title="solution-realtor">Риэлтор</div>
+					<div class="Item">Другое</div>
+				</div>
+				<div class="Body">
+					<div class="Item Active">
+						<h1>Домашний кошелек</h1>
+						<div class="Block">
+							<p>Использовать storewizard для организации семейной бухгалтерии - это отличная мысль! Вы можете планировать ваши расходы и составлять планы.  А мобильное приложение позволит вам оперативно вносить ваши расходы и всегда держать ситуацию под рукой.</p>
+							<div class="Control">
+								<div class="Link"><a href="javascript: Main.Window.Open('presentation-homewallet')">Посмотреть</a></div>
+								<div class="Link"><a href="#">Попробовать</a></div>
+								<div class="Link"><a href="javascript: Main.Window.Open('register-homewallet')">Приобрести</a></div>
+							</div>
+							<div style="margin-top: 135px;">
+								<div class="Icon Video" title="Смотреть видео" onclick="Main.Window.Open('video-homewallet')"></div>
+								<div class="Icon Presentation" title="Смотреть презентацию" onclick="Main.Window.Open('presentation-homewallet')"></div>								
+							</div>
+						</div>
+						<div class="Picture">
+							<img src="images/storewizard-screenshot-2.png">
+						</div>
+					</div>
+					<div class="Item"></div>
+					<div class="Item"></div>
+					<div class="Item"></div>
+					<div class="Item"></div>
+					<div class="Item"></div>
+				</div>
+			</div>
+			<div class="SocialNetwork" align="center">
+				<div class="Item Feed"></div>
+				<div class="Item Facebook"></div>
+				<div class="Item Twitter"></div>
+				<div class="Item VK"></div>
+			</div>
+			<div class="Support">
+				<div class="Row">
+					<div class="Item">
+						<div class="Calculator">
+							<div class="Title" onclick="Main.Window.Open('calculate-homewallet')" style="cursor: pointer;">
+								<h2>Сколько это стоит?</h2>
+							</div>
+							<div class="Description">​Воспользуйтесь нашим калькулятором, для того, чтобы рассчитать стоимость своих затрат. К оплате принимаются все виды пластиковых карт, а также все виды электронных денег. Все быстро и просто.</div>
+							<div class="Control" align="center">
+								<div class="Item Gift" title="Сюрприз!"></div>
+							</div>
+						</div>
+					</div>
+					<div class="Item">
+						<div class="Technology">
+							<div class="Title" onclick="Main.Window.Open('presentation-saas')" style="cursor: pointer;">
+								<h2>Как это работает?</h2>
+							</div>
+							<div class="Description">Вы платите арендную плату, просто арендуя у нас программу. Вам не нужно иметь в штате технических специалистов и дорогое оборудование. Возьмите столько, сколько вам нужно.</div>
+							<div class="Control" align="center">
+								<div class="Item Video" title="Смотреть видео" onclick="Main.Window.Open('video-saas')"></div>
+								<div class="Item Presentation" title="Смотреть презентацию" onclick="Main.Window.Open('presentation-saas')"></div>
+							</div>
+						</div>
+					</div>
+					<div class="Item" style="width: 366px;">
+						<div class="Service">
+							<div class="Title">
+								<h2>Техподдержка</h2>
+							</div>
+							<div class="Description">Техническая поддержка важный элемент любой деятельности. Вы всегда можете позвонить нам или написать на электронную почту. К вашим услугам сервис faq и форум</div>
+							<div class="Control" align="center">
+								<div class="Item Chat" title="Онлайн чат"></div>
+								<div class="Item Callback" title="Позвоните мне"></div>
+								<div class="Item Sendmail" title="Отправить сообщение"></div>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="Popup">
+			<script>
+				Main.Load([
+					'messages-windows.html',
+					'form-callback.html',
+					'presentation-saas.html',
+					'presentation-advertising.html',
+					'presentation-realtor.html',
+					'calculate-homewallet.html',
+					'calculate-advertising.html',
+					'calculate-realtor.html',
+					'register-homewallet.html',
+					'register-advertising.html',
+					'register-realtor.html'
+				]);
+			</script>
+		</div>		
+	</body>
+</html>

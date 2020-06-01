@@ -1,0 +1,50 @@
+div.Mask
+div.Window.Presentation(id="presentation-wizard")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				include presentation-wizard-slides
+				div.Slide
+					h1 Устройство программы
+					h2 Что дальше?
+					ul
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-store', true)") Хранилище
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-saas', true)") Аренде программы
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-mobile', true)") Мобильной версии программы
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.WizardSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.WizardSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.WizardSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.WizardSlider.OnClickEnd();)
+script
+	Main.WizardSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.WizardSlider, '#presentation-wizard');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.WizardSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.WizardSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.WizardSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.WizardSlider);
+		}		
+	}

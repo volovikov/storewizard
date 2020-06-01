@@ -1,0 +1,84 @@
+div.Mask
+div.Window.Presentation(id="presentation-concept-transfer")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				div.Slide
+					h1 Концепция работы
+					h2 На примере транспортной компании
+					p Представьте что вы, например, руководитель небольшой транспортной компании. Пусть на вас работают, скажем, 10 водителей со своим парком транспортных средств и два человека - диспетчеры. 					
+					div
+						img(src=offset+"images/presentation-concept-transfer-1.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере транспортной компании
+					p Оплата водителям - сдельная. Процент с выполненных работ. Оплата диспетчерам - фиксированная. Плюс офис, плюс бухгалтер. Что самое затратное в этой схеме? Аренда офиса - верно?
+					div
+						img(src=offset+"images/presentation-concept-transfer-2.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере транспортной компании
+					p Но как избавится от офиса? Даже если диспетчеры будут работать дома, как им обмениваться информацией? Как анализировать работу всей компании? Как посчитать сколько платить водителям?
+					div
+						img(src=offset+"images/presentation-concept-transfer-3.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере транспортной компании
+					p Вам нужна информационная среда, которая бы позволила вам работать всем вместе, на любых устройствах, в режиме реального времени. Среда, которую легко настроить под вас, под ваши процессы!
+					div
+						img(src=offset+"images/presentation-concept-transfer-4.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере транспортной компании
+					p Клиент звонит или заполняет форму на сайте. Заказ попадает в вашу программу и виден водителю, у него такая же программа, только на телефоне. И вы и водитель видите статистику. Это и есть storewizard!
+					div
+						img(src=offset+"images/presentation-concept-transfer-5.png")
+				div.Slide
+					h1 Концепция работы
+					h2 В итоге
+					ul
+						li Вы не платите за офис. Ваши менеджеры сидят дома. Это существенная экономия!
+						li Вы и ваши водители, видят статистику мгновенно, прозрачная схема оплаты
+						li Вы легко масштабируете схему, легко набираете новый персонал в нужной для вас точке города
+						li Вы не покупаете ни какого оборудования, ни серверов, ни компьютеров, ни столов - ничего! Минимальные первоначальные вложения
+				div.Slide
+					h1 Концепция работы
+					h2 Что дальше?
+					ul
+						li Вы можете ознакомится 
+							a(href="javascript: Main.Window.Open('presentation-general', true)") подробней 
+							с тем, как программа выглядет и принцип ее работы
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.TransferConceptSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.TransferConceptSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.TransferConceptSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.TransferConceptSlider.OnClickEnd();")
+script
+	Main.TransferConceptSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.TransferConceptSlider, '#presentation-concept-transfer');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.TransferConceptSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.TransferConceptSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.TransferConceptSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.TransferConceptSlider);
+		}		
+	}

@@ -1,0 +1,38 @@
+!!! html
+html
+	head
+		meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+		meta(http-equiv="Expires", content="Fri, Jan 01 1900 00:00:00 GMT")
+		meta(http-equiv="Pragma", content="no-cache")
+		meta(http-equiv="Cache-control", content="no-cache")
+		- if (pageTitle)
+			title= pageTitle
+		- else 
+			title="storewizard"					
+		link(rel="icon", type="image/png", href="favicon.png")
+		link(rel="stylesheet", type="text/css", href="desktop/css/ext-all.css")
+		link(rel="stylesheet", type="text/css", href="desktop/css/my-ext-theme.css")
+		script(src="desktop/js/ext-base.js")
+		script(src="desktop/js/ext-all.js")
+		script(src="desktop/js/welcome.js")
+		style
+			a {color: #385F95;}
+			body {background: #3b8cbb url(desktop/images/logo.png) no-repeat 20px 20px;}
+			.icon-login {background: url(desktop/images/icon-login.png) 0 5px no-repeat !important;} 
+			.appVersion {
+				bottom: 0;
+				color: white;
+				height: 2em;
+				left: 0;
+				margin: 0 48%;
+				position: absolute;
+				width: 40%;
+				font: normal 12px Arial;
+				color: white;
+			}
+	body
+		div.appVersion Version: 
+			= appVersion
+		form(id="history-form", class="x-hidden")
+			input(type="hidden", id="x-history-field")
+			iframe(id="x-history-frame")

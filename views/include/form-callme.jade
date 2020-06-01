@@ -1,0 +1,40 @@
+div.Mask
+div.Window.Callback(id="form-callme")
+	div.Header Заказать обратный звонок
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Form(action="/callback/")
+			div.Field
+				div.Label Фамилия, имя
+				input(class="Input", type="text", name="name")
+				input(class="Input Hidden", type="hidden", name="type", value="Обратный звонок")
+				input(class="Input Hidden", type="hidden", name="email", value="")
+				input(class="Input Hidden", type="hidden", name="response", value="")
+				input(class="Input Hidden", type="hidden", name="text", value="")
+				input(class="Input Hidden", type="hidden", name="active", value="Нет")
+			div.Field
+				div.Label Телефон
+				input(class="Input", type="text", name="phone")
+			div.Field
+				div.Label Удобное для связи время
+				div.Select
+					input(type="hidden", value="09:00 - 10:00", name="callTime", class="Hidden Input")
+					input(type="text", value="09:00 - 10:00", style="width: 203px;", readonly="readonly", class="Visible")
+					div.Popup
+						div.Trigger(onclick="Main.Select.OnClickTrigger(this);")
+						div.Options(style="width: 226px; margin-left: -228px; margin-top: 21px")
+							div.Item(value="09:00 - 10:00", display="09:00 - 10:00", onclick="Main.Select.OnClickItem(this);") 09:00 - 10:00
+							div.Item(value="10:00 - 11:00", display="10:00 - 11:00", onclick="Main.Select.OnClickItem(this);") 10:00 - 11:00
+							div.Item(value="11:00 - 12:00", display="11:00 - 12:00", onclick="Main.Select.OnClickItem(this);") 11:00 - 12:00
+							div.Item(value="12:00 - 13:00", display="12:00 - 13:00", onclick="Main.Select.OnClickItem(this);") 12:00 - 13:00
+							div.Item(value="13:00 - 14:00", display="13:00 - 14:00", onclick="Main.Select.OnClickItem(this);") 13:00 - 14:00
+							div.Item(value="14:00 - 15:00", display="14:00 - 15:00", onclick="Main.Select.OnClickItem(this);") 14:00 - 15:00
+							div.Item(value="15:00 - 16:00", display="15:00 - 16:00", onclick="Main.Select.OnClickItem(this);") 15:00 - 16:00
+							div.Item(value="16:00 - 17:00", display="16:00 - 17:00", onclick="Main.Select.OnClickItem(this);") 16:00 - 17:00
+							div.Item(value="17:00 - 18:00", display="17:00 - 18:00", onclick="Main.Select.OnClickItem(this);") 17:00 - 18:00
+		div.Control
+			div.Buttons(align="right")
+				div.Button
+					div.Border(onclick="Main.Form.OnClickSubmit(this);") Сохранить
+				div.Button
+					div.Border(onclick="Main.Window.Close('form-callme');") Отменить

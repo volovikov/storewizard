@@ -1,0 +1,145 @@
+- locals.pageTitle = "Поддержка"
+	div.Center
+		div.Logotip(onclick="location.href='/'")
+		div.PrivateRoom
+			div.Item.Favorite(onclick="Main.OnClickFavorite(this);")
+			div.Item.Mailto(onclick="Main.Window.Open('form-callback');")
+			div.Item.Enter личный кабинет
+		div.Separator
+		div.TopMenu
+			div.Item
+				a(href="/", title="home") В начало
+			div.Item
+				a(href="/solution/", title="solution") Решения
+			div.Item.Active
+				a(href="/support/", title="support") Поддержка
+			div.Item
+				a(href="/blog/", title="blog") Блог
+		div.TabPanel
+			div.Header
+				div.Item.Active(onclick="Main.Response.SetActiveResponse()") Отзывы
+				div.Item(onclick="Main.Response.SetActiveFaq();") Вопрос ответ
+				div.Item(onclick="Main.Response.SetActiveOffer();") Предложения
+			div.Body					
+				div.Item.Active
+					h1 Отзывы
+					div.Block
+						p Мы будем вам очень признательны, если вы оставите отзыв о нашем продукте и/или сервисе.  Мы уверены что ваше мнение может помочь будущим пользователям сделать правильный выбор.
+						div.Form(style="margin-top: 40px;", action="?task=SaveCallback")
+							div.Row
+								div.Col(style="margin-right: 20px;")
+									div.Field
+										div.Label Ваше имя
+										input(class="Input", name="name", type="text")
+								div.Col
+									div.Field
+										div.Label Ваш e-mail
+										input(class="Input", name="email", type="text")
+							div.Row
+								div.Field(style="margin: 0px; padding: 0px")
+									div.Label Ваш отзыв
+									textarea(class="Input", name="text", style="width: 472px; height: 70px;")
+							div.Row 
+								input(type="hidden", name="type", value="Отзывы", class="Input")
+						div.Control(style="margin: 20px 0;")
+							div.Button
+								div.Border(onclick="Main.Form.OnClickSubmit(this)") Сохранить
+					div.Picture(style="margin: -20px 0 0 55px")
+						img(src=offset+"images/icon-mouse-big.png")
+				div.Item
+					h1 Вопрос ответ
+					div.Block
+						p Используя этот сервис вы можете изучить популярные вопросы и ответы на них. В случае, если вы не смогли найти ответ на свой вопрос, вы можете его задать, использую форму ниже.
+						div.Form(style="margin-top: 40px;", action="?task=SaveCallback")
+							div.Row
+								div.Col(style="margin-right: 20px;")
+									div.Field
+										div.Label Ваше имя
+										input(class="Input", type="text", name="name")
+								div.Col
+									div.Field
+										div.Label Ваш e-mail
+										input(class="Input", type="text", name="email")
+							div.Row
+								div.Field(style="margin: 0px; padding: 0px")
+									div.Label Ваш вопрос
+									textarea(class="Input", name="text", style="width: 472px; height: 70px;")
+							div.Row 
+								input(type="hidden", name="type", value="Вопрос ответ", class="Input")
+						div.Control(style="margin: 20px 0;")
+							div.Button
+								div.Border(onclick="Main.Form.OnClickSubmit(this);") Сохранить
+					div.Picture(style="margin: -20px 0 0 55px")
+						img(src=offset+"images/icon-keyboard-big.png")
+				div.Item
+					h1 Предложения
+					div.Block
+						p Нам действительно интересно ваше мнение. Как говорится, одна голова хорошо, а две лучше. Мы уверены что с вашей помощью storewizard действительно станет продуктом номер один. Спасибо
+						div.Form(style="margin-top: 40px;", action="?task=SaveCallback")
+							div.Row
+								div.Col(style="margin-right: 20px;")
+									div.Field
+										div.Label Ваше имя
+										input.Input(type="text", name="name")
+								div.Col
+									div.Field
+										div.Label Ваш e-mail
+										input(class="Input", type="text", name="email")
+							div.Row
+								div.Field(style="margin: 0px; padding: 0px")
+									div.Label Ваше предложение
+									textarea(class="Input", name="text", style="width: 472px; height: 70px;")
+							div.Row 
+								input(type="hidden", name="type", value="Предложения", class="Input")
+						div.Control(style="margin: 20px 0;")
+							div.Button
+								div.Border(onclick="Main.Form.OnClickSubmit(this);") Сохранить
+					div.Picture(style="margin: -20px 0 0 55px")
+						img(src=offset+"images/icon-idea-big.png")
+		div.SocialNetwork(align="center")
+			div.Item.Feed
+			div.Item.Facebook
+			div.Item.Twitter
+			div.Item.VK
+		div.Support.Response
+			- response.forEach(function(item, index) {
+				div.Question(id=#{item.id}) #{item.text}
+					div.Answer #{item.date} #{item.name}
+			- });
+			div.Control.Middle(align="center", style="height: 80px;")
+				div.Item.Chat
+		div.Support.Faq(style="display: none;")
+			- faq.forEach(function(item, index) {
+				div.Question(id=#{item.id}) #{item.text}
+					div.Answer #{item.response}
+			- });
+			div.Control.Middle(align="center", style="height: 80px;")
+				div.Item.Chat
+		div.Support.Offer(style="display: none;")
+			- offer.forEach(function(item, index) {
+				div.Question(id=#{item.id}) #{item.text}
+					div.Answer #{item.response}
+			- });
+			div.Control.Middle(align="center", style="height: 80px;")
+				div.Item.Chat
+	div.Popup
+		include include/form-callback
+		include include/messages
+	script
+		Main.Response = {
+			SetActiveResponse: function() {
+				$('.Support').hide();
+				$('.Support.Response').show();
+				Main.TabPanel.OnClickTab(0);
+			},				
+			SetActiveFaq: function() {
+				$('.Support').hide();
+				$('.Support.Faq').show();
+				Main.TabPanel.OnClickTab(1);
+			},
+			SetActiveOffer: function() {
+				$('.Support').hide();
+				$('.Support.Offer').show();										
+				Main.TabPanel.OnClickTab(2);
+			}				
+		}

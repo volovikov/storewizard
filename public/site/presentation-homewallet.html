@@ -1,0 +1,65 @@
+<div class="Mask"></div>
+<div class="Window Presentation" id="presentation-homewallet">
+	<div class="Header">
+		Презентация
+		<div class="Button Close" title="Закрыть окно" onclick="Main.Window.OnClickClose(this);"></div>
+	</div>
+	<div class="Body">
+		<div class="Display">
+			<div class="Tape">
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Это универсальная программа</h2>
+					<p>Тут некий текст, Тут некий текст, Тут некий текст, Тут некий текст, </p>
+				</div>
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Это универсальная программа</h2>
+					<p>Тут некий текст, Тут некий текст, Тут некий текст, Тут некий текст, </p>
+				</div>						
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Это универсальная программа</h2>
+					<p>Тут некий текст, Тут некий текст, Тут некий текст, Тут некий текст, </p>
+				</div>								
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Это универсальная программа</h2>
+					<p>Тут некий текст, Тут некий текст, Тут некий текст, Тут некий текст, </p>
+				</div>								
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Это универсальная программа</h2>
+					<p>Тут некий текст, Тут некий текст, Тут некий текст, Тут некий текст, </p>
+				</div>				
+			</div>
+		</div>
+		<div class="Control">
+			<div class="Buttons" align="center">
+				<div class="Icon Begin" onclick="Main.HomewalletSlider.OnClickBegin();"></div>
+				<div class="Icon Back" onclick="Main.HomewalletSlider.OnClickBack();"></div>
+				<div class="Icon Forward" onclick="Main.HomewalletSlider.OnClickForward();"></div>
+				<div class="Icon End" onclick="Main.HomewalletSlider.OnClickEnd();"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	Main.HomewalletSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.HomewalletSlider, '#presentation-homewallet');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.HomewalletSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.HomewalletSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.HomewalletSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.HomewalletSlider);
+		}		
+	}
+</script>

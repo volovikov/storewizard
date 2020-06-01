@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>		
+		<div class="Center">
+			<div class="Logotip" onclick="location.href='index.html'"></div>
+			<div class="PrivateRoom">
+				<div class="Item Favorite" onclick="Main.OnClickFavorite(this);"></div>
+				<div class="Item Mailto" onclick="Main.Window.Open('form-callback');"></div>
+				<div class="Item Enter">личный кабинет</div>
+			</div>
+			<div class="Separator"></div>
+			<div class="TopMenu">
+				<div class="Item"><a href="index.html">В начало</a></div>
+				<div class="Item"><a href="solution.html">Решения</a></div>
+				<div class="Item Active"><a href="support.html">Поддержка</a></div>
+				<div class="Item"><a href="blog.html">Блог</a></div>
+			</div>			
+			<div class="TabPanel">
+				<div class="Header">					
+					<div class="Item Active" onclick="Main.Callback.SetActiveCallback()">Отзывы</div>
+					<div class="Item" onclick="Main.Callback.SetActiveFaq();">Вопрос ответ</div>
+					<div class="Item" onclick="Main.Callback.SetActiveOffer();">Предложения</div>
+				</div>
+				<div class="Body">					
+					<div class="Item Active">
+						<h1>Отзывы</h1>
+						<div class="Block">
+							<p>Мы будем вам очень признательны, если вы оставите отзыв о нашем продукте и/или сервисе.  Мы уверены что ваше мнение может помочь будущим пользователям сделать правильный выбор. </p>
+							<div class="Form" style="margin-top: 40px;">
+								<div class="Row">
+									<div class="Col" style="margin-right: 20px;">
+										<div class="Field">
+											<div class="Label">Ваше имя</div>
+											<input class="Input" name="name" type="text">
+										</div>
+									</div>
+									<div class="Col">
+										<div class="Field">
+											<div class="Label">Ваш e-mail</div>
+											<input class="Input" name="email" type="text">
+										</div>
+									</div>
+								</div>
+								<div class="Row">
+									<div class="Field" style="margin: 0px; padding: 0px">
+										<div class="Label">Ваш отзыв</div>
+										<textarea class="Input" name="callback" style="width: 472px; height: 70px;"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="Control" style="margin: 20px 0;">
+								<div class="Button">
+									<div class="Border" onclick="Main.Form.OnClickSubmit(this)">Сохранить</div>
+								</div>								
+							</div>							
+						</div>
+						<div class="Picture" style="margin: -20px 0 0 55px">
+							<img src="images/icon-mouse-big.png">
+						</div>						
+					</div>
+					<div class="Item">
+						<h1>Вопрос ответ</h1>
+						<div class="Block">
+							<p>Используя этот сервис вы можете изучить популярные вопросы и ответы на них. В случае, если вы не смогли найти ответ на свой вопрос, вы можете его задать, использую форму ниже. </p>
+							<div class="Form" style="margin-top: 40px;">
+								<div class="Row">
+									<div class="Col" style="margin-right: 20px;">
+										<div class="Field">
+											<div class="Label">Ваше имя</div>
+											<input class="Input" type="text" name="name">
+										</div>
+									</div>
+									<div class="Col">
+										<div class="Field">
+											<div class="Label">Ваш e-mail</div>
+											<input class="Input" type="text" name="email">
+										</div>
+									</div>
+								</div>
+								<div class="Row">
+									<div class="Field" style="margin: 0px; padding: 0px">
+										<div class="Label">Ваш вопрос</div>
+										<textarea class="Input" name="question" style="width: 472px; height: 70px;"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="Control" style="margin: 20px 0;">
+								<div class="Button">
+									<div class="Border" onclick="Main.Form.OnClickSubmit(this);">Сохранить</div>
+								</div>								
+							</div>							
+						</div>
+						<div class="Picture" style="margin: -20px 0 0 55px">
+							<img src="images/icon-keyboard-big.png">
+						</div>
+					</div>					
+					<div class="Item">
+						<h1>Предложения</h1>
+						<div class="Block">
+							<p>Нам действительно интересно ваше мнение. Как говорится, одна голова хорошо, а две лучше. Мы уверены что с вашей помощью storewizard действительно станет продуктом номер один. Спасибо</p>
+							<div class="Form" style="margin-top: 40px;">
+								<div class="Row">
+									<div class="Col" style="margin-right: 20px;">
+										<div class="Field">
+											<div class="Label">Ваше имя</div>
+											<input class="Input" type="text" name="name">
+										</div>
+									</div>
+									<div class="Col">
+										<div class="Field">
+											<div class="Label">Ваш e-mail</div>
+											<input class="Input" type="text" name="email">
+										</div>
+									</div>
+								</div>
+								<div class="Row">
+									<div class="Field" style="margin: 0px; padding: 0px">
+										<div class="Label">Ваше предложение</div>
+										<textarea class="Input" name="offer" style="width: 472px; height: 70px;"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="Control" style="margin: 20px 0;">
+								<div class="Button">
+									<div class="Border" onclick="Main.Form.OnClickSubmit(this);">Сохранить</div>
+								</div>								
+							</div>							
+						</div>
+						<div class="Picture" style="margin: -20px 0 0 55px">
+							<img src="images/icon-idea-big.png">
+						</div>							
+					</div>
+				</div>
+			</div>
+			<div class="SocialNetwork" align="center">
+				<div class="Item Feed"></div>
+				<div class="Item Facebook"></div>
+				<div class="Item Twitter"></div>
+				<div class="Item VK"></div>
+			</div>
+			<div class="Support Faq">
+				<div class="Question">
+					Чем ваш GET-Work+ лучше, Мандривы за 300 р.?
+					<div class="Answer">
+						Как минимум наличием лицензии действительной и не вызывающей сомнений на территории РФ, совместимостью с рядом популярных приложений MS Windows и технической поддержкой.
+					</div>
+				</div>
+				<div class="Question">
+					Как быстро появляется в дистрибутивах поддержка нового оборудования?
+					<div class="Answer">
+						Программные продукты проекта LinuxWizard поддерживают широкий круг аппаратного компьютерного оборудования. Поддержка новых устройств появляется в дистрибутивах по мере появления официальных драйверов для этих устройств.
+					</div>
+				</div>				
+				<div class="Question">
+					Возможно ли управление ИТ-инфраструктурой на основе продуктов серии GET? Существует ли аналог Microsoft SMS?
+					<div class="Answer">
+						Да. Управление корпоративной IT-инфраструктурой на базе продуктов серии GET возможно. Для Linux существует ПО аудита и инвентаризации сетей/серверов/рабочих мест, разворачивания пакетов ПО, например свободная система OCS Inventory NG.
+					</div>
+				</div>	
+				<div class="Control Middle" align="center" style="height: 80px;">
+					<div class="Item Chat"></div>
+				</div>
+			</div>
+			<div class="Support Callback" style="display: none;">
+				<div class="Question">
+					Пользуемся «Сторевизардом» на работе. Уже не представляем себе работы без него. Удобно, функционально, понятно, просто.
+					<div class="Answer">
+						11/12 Воловиков В.С
+					</div>
+				</div>
+				<div class="Control Middle" align="center" style="height: 80px;">
+					<div class="Item Chat"></div>
+				</div>				
+			</div>			
+			<div class="Support Offer" style="display: none;">
+				<div class="Question">
+					А почему бы вам не сделать мобильную версию для CRM HostPost,  имхо это будет интересно и полезно
+					<div class="Answer">
+						Очень интересное предложение. Мы обязательно рассмотрим его.  Большое спасибо
+					</div>
+				</div>
+				<div class="Control Middle" align="center" style="height: 80px;">
+					<div class="Item Chat"></div>
+				</div>				
+			</div>
+		</div>
+		<div class="Popup">
+			<script>
+				Main.Load([
+					'messages-windows.html',
+					'form-callback.html']
+				);
+			</script>
+		</div>
+		<script>
+			Main.Callback = {
+				OnReady: function() {
+					console.log(this);
+				},
+				SetActiveCallback: function() {
+					$('.Support').hide();
+					$('.Support.Callback').show();					
+					Main.TabPanel.OnClickTab(0);
+				},				
+				SetActiveFaq: function() {
+					$('.Support').hide();
+					$('.Support.Faq').show();
+					Main.TabPanel.OnClickTab(1);
+				},
+				SetActiveOffer: function() {
+					$('.Support').hide();
+					$('.Support.Offer').show();										
+					Main.TabPanel.OnClickTab(2);
+				}				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+- locals.pageTitle = "Блог"
+	div.Center
+		div.Logotip(onclick="location.href='/'")
+		div.PrivateRoom
+			div.Item.Favorite(onclick="Main.OnClickFavorite(this);")
+			div.Item.Mailto(onclick="Main.Window.Open('form-callback');")
+			div.Item.Enter личный кабинет
+		div.Separator
+		div.TopMenu
+			div.Item
+				a(href="/", title="home") В начало
+			div.Item
+				a(href="/solution/", title="solution") Решения
+			div.Item
+				a(href="/support/", title="support") Поддержка
+			div.Item.Active
+				a(href="/blog/", title="blog") Блог
+		div.TabPanel
+			div.TabPanel
+				div.Header
+					div.Item.Active(onclick="Main.TabPanel.OnClickTab(0);") Бизнесу
+					div.Item(onclick="Main.TabPanel.OnClickTab(1);") Как пользоваться
+				div.Body.Blog
+					div.Blog
+						div.Item.Active
+							- business.forEach(function(item, index) {
+								div.Record
+								h2 #{item.title}
+								div.Short
+									div.Intro #{item.intro}
+									p #{item.content}
+								div.Control
+									div.Date #{item.date}
+									div.Commit 3 сообщений
+							- });
+						div.Item
+							- soft.forEach(function(item, index) {
+								div.Record
+								h2 #{item.title}
+								div.Short
+									div.Intro #{item.intro}
+									p #{item.content}
+								div.Control
+									div.Date #{item.date}
+									div.Commit 3 сообщений
+							- });
+						div.Item
+							- other.forEach(function(item, index) {
+								div.Record
+								h2 #{item.title}
+								div.Short
+									div.Intro #{item.intro}
+									p #{item.content}
+								div.Control
+									div.Date #{item.date}
+									div.Commit 3 сообщений
+							- });
+					div.News
+						- news.forEach(function(item, index) {
+							div.Record
+								h2 #{item.title}
+								div.Short #{item.intro}
+								div.Control
+									div.Date #{item.date}
+									div.Commit 0 сообщений
+						- });
+			div.Footer
+				div.FooterMenu
+					div.Item 
+						a(href="/") В начало
+					div.Item 
+						a(href="/solution/") Решения
+					div.Item 
+						a(href="/support/") Поддержка
+					div.Item.Active 
+						a(href="blog.html") Блог
+	div.Popup
+		include include/messages
+		include include/form-callback
+

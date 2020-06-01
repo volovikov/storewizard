@@ -1,0 +1,93 @@
+div.Mask
+div.Window.Presentation(id="presentation-site")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				div.Slide
+					h1 Управление сайтом
+					h2 Введение
+					p Управление сайтом, это специальная конфигурация storewizard для управления содержимым сайта (CMS). Конфигурация имеет ряд особенностей:
+					ul 
+						li В ее состав входит Мастер, а это значит что вы всегда можете изменить/добавить вкладку, изменить/добавить поле и т.д.
+						li В ее состав входит специальная вкладка Календарь. С ее помощью можно легко организовать свою работу
+						li В ее состав входит система организации Он-лайн чата, а это значит что можно создать Он-лайн консультант на вашем сайте
+				div.Slide 
+					h1 Управление сайтом
+					h2 Пользователи
+					p Количество пользователей в конфигурации Управление сайтом не ограничено. Мастер доступен только пользователям с ролью Администратор. С его помощью вы сможете легко добавить и другие роли
+					div
+						img(src=offset+"images/presentation-site-1.png")
+				div.Slide 
+					h1 Управление сайтом
+					h2 Визуальный редактор
+					p Простой и в то же время мощный визуальный редактор делает процесс ввода информации простым и понятным
+					div
+						img(src=offset+"images/presentation-site-2.png")
+				div.Slide
+					h1 Управление сайтом
+					h2 Визуальный редактор
+					p Размер поля визуального редактора, автоматически изменяет размер вслед за размером всплывающего окна, как в ширину, так и в высоту. А еще, окно, можно свернуть!
+					div
+						img(src=offset+"images/presentation-site-3.png")
+				div.Slide 
+					h1 Управление сайтом
+					h2 Блог, интернет-магазин, все что угодно
+					p Добавьте вкладку Блог. Добавьте в нее поля, скажем: дата, заголовок, группа, вступление и содержание. Добавте вкладку Комментарии. Свяжите комментарии и блог. Вот и получился Блог сайт. 
+					div
+						img(src=offset+"images/presentation-site-4.png")
+				div.Slide 
+					h1 Управление сайтом
+					h2 Он-лайн консультант
+					p Хотите поставить чат на свой сайт? Ни каких проблем. Данная конфигурация поддерживает эту функцию по умолчанию
+					div
+						img(src=offset+"images/presentation-site-5.png")
+				div.Slide 
+					h1 Управление сайтом
+					h2 Он-лайн заказ на ваш мобильник
+					p У вас интернет магазин? Хотите чтобы заказы с сайта приходили прямо на ваш телефон? Воспользуйтесь мобильной версией конфигурации и дело в шляпе!
+					div
+						img(src=offset+"images/presentation-site-6.png")
+				div.Slide
+					h1 Управление сайтом
+					h2 Что дальше?
+					ul
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-store', true)") Хранилище
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-wizard', true)") Мастере
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-mobile', true)") Мобильной версии программы
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.SiteSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.SiteSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.SiteSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.SiteSlider.OnClickEnd();")
+script
+	Main.SiteSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.SiteSlider, '#presentation-site');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.SiteSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.SiteSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.SiteSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.SiteSlider);
+		}		
+	}

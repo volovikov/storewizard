@@ -1,0 +1,6 @@
+- locals.pageTitle = "Ошибка!"
+	div.Center
+		div.Logotip(onclick="location.href='/'")
+		div(style="margin-top: 50px;")
+			h1= message
+

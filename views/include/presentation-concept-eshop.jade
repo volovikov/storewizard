@@ -1,0 +1,72 @@
+div.Mask
+div.Window.Presentation(id="presentation-concept-eshop")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				div.Slide
+					h1 Концепция работы
+					h2 На примере работы интернет магазина
+					p А теперь представим что у вас есть свой интернет магазин. Неужели вы осуществляете продажи только через него? Если нет, то как и где совмещать данные? Как контролировать остатки?
+					div
+						img(src=offset+"images/presentation-concept-eshop-1.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере работы интернет магазина
+					p Какой же интернет магазин без online консультата? А как на счет мгновенного уведомления на телефон о состоявшейся покупке? Но стандратная коробчная CMS такого не умеет! 
+					div
+						img(src=offset+"images/presentation-concept-eshop-2.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере работы интернет магазина
+					p Storewizard - это единая информационная среда в которой можно хранить данные как с online продаж, так и с offline. А еще это мгновенные уведомление на ваш телефон и online консультат!
+					div
+						img(src=offset+"images/presentation-concept-eshop-3.png")
+				div.Slide
+					h1 Концепция работы
+					h2 В итоге
+					ul
+						li Вы оперативны! Все заказы приходят тут же, к вам на телефон
+						li Вы не покупаете отдельно программу online консультат, не пишите ее сами. Она уже тут!
+						li Вы не разрываетесь. Все данные в одном месте. С продаж сайта, с продаж менеджеров, с партнерских программ и т.д.
+				div.Slide
+					h1 Концепция работы
+					h2 Что дальше?
+					ul
+						li Вы можете ознакомится подробней с тем, как программа выглядет и как работает 
+							a(href="javascript: Main.Window.Open('presentation-general', true)") нажав здесь
+						li Вы можете ознакомится со специальной локализацией Организация торговли 
+							a(href="javascript: Main.Window.Open('presentation-trade', true)") нажав здесь
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.EshopConceptSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.EshopConceptSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.EshopConceptSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.EshopConceptSlider.OnClickEnd();")
+script
+	Main.EshopConceptSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.EshopConceptSlider, '#presentation-concept-eshop');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.EshopConceptSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.EshopConceptSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.EshopConceptSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.EshopConceptSlider);
+		}		
+	}

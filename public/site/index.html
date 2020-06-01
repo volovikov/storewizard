@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="css/style.css" rel="stylesheet" type="text/css" charset="utf-8" />
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>		
+		<div class="Center">
+			<div class="Logotip" onclick="location.href='index.html'"></div>
+			<div class="PrivateRoom">
+				<div class="Item Favorite" onclick="Main.OnClickFavorite(this);"></div>
+				<div class="Item Mailto" onclick="Main.Window.Open('form-callback');"></div>
+				<div class="Item Enter">личный кабинет</div>
+			</div>
+			<div class="Separator"></div>
+			<div class="TopMenu">
+				<div class="Item Active"><a href="index.html" title="home">В начало</a></div>
+				<div class="Item"><a href="solution.html" title="solution">Решения</a></div>
+				<div class="Item"><a href="support.html" title="support">Поддержка</a></div>
+				<div class="Item"><a href="blog.html" title="?blog">Блог</a></div>
+			</div>			
+			<div class="TabPanel">
+				<div class="Header">
+					<div class="Item Active" onclick="Main.TabPanel.OnClickTab(0);" title="home-about">Что такое storewizard?</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(1);" title="home-wizard">Проектируйте, это просто!</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(2);" title="home-store">Управляйте, это легко!</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(3);" title="home-saas">Программа в аренду</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(4);" title="home-realweb">Все здесь и сейчас</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(5);" title="home-mobile">У нас есть iPhone!</div>
+				</div>
+				<div class="Body">
+					<div class="Item Active">
+						<h1>Что такое storewizard?</h1>
+						<div class="Block">
+							<p>Это универсальная программа для автоматизации любой вашей деятельности которая состоит из двух частей: хранилище и мастера. </p>
+							<p>Это гибкая программа. Благодаря данному свойству она уже адаптирована под вас и ваш бизнес.</p>
+							<p>Это простая программа. Вы умеете пользоваться ОС Windows? Больше вам знать ничего не надо. Вы все умеете!</p>
+							<p>Это готовая программа. Вы просто берёте ее в аренду.  Платите ровно столько, сколько вы ей пользуйтесь. И ни копейкой больше!</p>
+							<div class="Icon Video" title="Смотреть видео" onclick="Main.Window.Open('video-general')"></div>
+							<div class="Icon Presentation" title="Смотреть презентацию" onclick="Main.Window.Open('presentation-general')"></div>
+						</div>
+						<div class="Picture">
+							<img src="images/storewizard-screenshot-1.png">
+						</div>
+					</div>
+					<div class="Item">
+						<h1>Проектируйте, это просто!</h1>
+						<div class="Block">
+							<p>У вас появился новый отдел или вы хотите помечать новых клиентов желтым цветом? Что делать, если типовая конфигурация не имеет нужных свойств?</p>
+							<p>Без паники! У вас есть мастер. Откройте его и последовательно, отвечая на его вопросы, измените то, что вам нужно, все что вам угодно! Вы контролируете ситуацию и ни от кого не зависите!</p>
+							<div class="Icon Video" title="Смотреть видео" onclick="Main.Window.Open('video-wizard')"></div>
+							<div class="Icon Presentation" title="Смотреть презентацию" onclick="Main.Window.Open('presentation-wizard')"></div>
+						</div>
+						<div class="Picture">
+							<img src="images/storewizard-screenshot-3.png">
+						</div>						
+					</div>
+					<div class="Item">
+						<h1>Управляйте, это легко!</h1>
+						<div class="Block">
+							<p>Поверьте, вы все уже умеете! Просто используйте ваши навыки работы с операционной системой Window и этого будет достаточно!</p>
+							<p>Информацию можно сортировать, просто нажмите на заголовок колонки. Вы что то хотите найти? К вашим услугам фильтр! Вы не помните что именно искать? Просто введите в поле поиска примерное значение и система сама все найдет</p>
+							<p>Вы хотите сделать колонку Имя шире? Сделайте это! Вы хотите убрать колонку контакты, она вам мешает? Легко! Вы здесь хозяин и ни кто другой.</p>
+							<div class="Icon Video" title="Смотреть видео" onclick="Main.Window.Open('video-store')"></div>
+							<div class="Icon Presentation" title="Смотреть презентацию" onclick="Main.Window.Open('presentation-store')"></div>
+						</div>
+						<div class="Picture">
+							<img src="images/storewizard-screenshot-4.png">
+						</div>						
+					</div>
+					<div class="Item">
+						<h1>Программа в аренду!</h1>
+						<div class="Block">
+							<p>Забудьте про лицензию, про внедрение, настройку, обслуживание и обновление. Все это в прошлом. Вы платите только за услугу, за время в течении которого вы будете пользоваться программой. Один месяц, три месяца, год - решать вам.  Все остальное - наши проблемы!</p>
+							<p>​Воспользуйтесь нашим калькулятором, для того, чтобы рассчитать стоимость своих затрат. К оплате принимаются все виды пластиковых карт, а также все виды электронных денег. Все быстро и просто.</p>
+							<div class="Icon Video" title="Смотреть видео" onclick="Main.Window.Open('video-saas')"></div>
+							<div class="Icon Presentation" title="Смотреть презентацию" onclick="Main.Window.Open('presentation-saas')"></div>
+						</div>
+						<div class="Picture" style="margin-top: -30px;">
+							<img src="images/storewizard-saas.png">
+						</div>
+					</div>
+					<div class="Item">
+						<h1>Все здесь и сейчас!</h1>
+						<p style="margin-bottom: 15px; font: normal 18px 'PTSansRegular', Arial;">Не ждите у моря погоды! Не нужно нажимать F5 постоянно чтобы обновить экран. Вся информация придет сразу же, как только она будет добавлена. И не важно пользуетесь вы мобильным телефоном или обычным компьютером!</p>
+						<img src="images/storewizard-screenshot-5.png" onclick="Main.Window.Open('presentation-realtime');" style="cursor:pointer;">
+					</div>
+					<div class="Item">
+						<h1>У меня есть iPhone!</h1>
+						<div class="Block">
+							<p>Отлично! А у нас есть приложение для iPhone! А еще есть приложение для iPad и OS Android, как для мобильного телефона, так и для планшета. Интересно?</p>
+							<p>А еще, в случае если вы используя мобильное приложение, совершите любую операцию, она тут же отразиться во всех копиях программы: на компьютере, на планшете, на смартфоне и т.д.</p>
+							<div class="Icon Video" title="Смотреть видео" onclick="Main.Window.Open('video-mobile')"></div>
+							<div class="Icon Presentation" title="Смотреть презентацию" onclick="Main.Window.Open('presentation-mobile')"></div>
+						</div>
+						<div class="Picture" style="margin-top: -30px;">
+							<img src="images/storewizard-mobile.png">
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="SocialNetwork" align="center">
+				<div class="Item Feed"></div>
+				<div class="Item Facebook"></div>
+				<div class="Item Twitter"></div>
+				<div class="Item VK"></div>
+			</div>
+			<div class="Production">
+				<div class="Row">
+					<div class="Item">
+						<div class="Homewallet">
+							<div class="Title">
+								<h2>Домашний кошелёк</h2>
+							</div>
+							<div class="Description">Использовать storewizard для организации семейной бухгалтерии - это отличная мысль! Вы можете планировать ваши расходы и составлять планы.  А мобильное приложение позволит вам оперативно вносить ваши расходы и всегда держать ситуацию под рукой.</div>
+							<div class="Control" align="center">
+								<div class="Item Video" title="Видео" onclick="Main.Window.Open('video-homewallet');"></div>
+								<div class="Item Presentation" title="Презентация" onclick="Main.Window.Open('presentation-homewallet');"></div>
+								<div class="Item Price" title="Сколько стоит?" onclick="Main.Window.Open('calculate-homewallet');"></div>
+								<div class="Item Take" title="Зарегистрироваться" onclick="Main.Window.Open('register-homewallet');"></div>
+							</div>
+						</div>
+					</div>
+					<div class="Item">
+						<div class="Advertising">
+							<div class="Title">
+								<h2>Автоматизация рекламного бизнеса</h2>
+							</div>
+							<div class="Description">Нет ни каких ограничений использовать storewizard в рекламном агентстве. Вы можете легко управлять агентской сетью сидя в офисе и получать оперативные данные и сводки прямо сейчас.</div>
+							<div class="Control" align="center">
+								<div class="Item Video" title="Видео" onclick="Main.Window.Open('video-advertising');"></div>
+								<div class="Item Presentation" title="Презентация" onclick="Main.Window.Open('presentation-advertising');"></div>
+								<div class="Item Price" title="Сколько стоит?" onclick="Main.Window.Open('calculate-advertising');"></div>
+								<div class="Item Take" title="Зарегистрироваться" onclick="Main.Window.Open('register-advertising');"></div>
+							</div>
+						</div>
+					</div>
+					<div class="Item" style="width: 366px;">
+						<div class="Realtor">
+							<div class="Title">
+								<h2>Риэлтору в помощь!</h2>
+							</div>
+							<div class="Description">Установите storewizard на ваш планшет или смартфон. Информация о текущих сделках и о новых предложениях будут поступать прямо туда - немедлено! А что может быть важнее скорости?</div>
+							<div class="Control" align="center">
+								<div class="Item Video" title="Видео" onclick="Main.Window.Open('video-realtor');"></div>
+								<div class="Item Presentation" title="Презентация" onclick="Main.Window.Open('presentation-realtor');"></div>
+								<div class="Item Price" title="Сколько стоит?" onclick="Main.Window.Open('calculate-realtor');"></div>
+								<div class="Item Take" title="Зарегистрироваться" onclick="Main.Window.Open('register-realtor');"></div>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="Popup">						
+				<!--#include file="messages-windows.html" -->
+				<!--#include virtual="messages-windows.html" -->
+<!--
+				<script>
+					Main.Load([
+						'messages-windows.html',
+						'form-callback.html',
+						'presentation-general.html',
+						'presentation-wizard.html',
+						'presentation-store.html',
+						'presentation-saas.html',
+						'presentation-realtime.html',
+						'presentation-mobile.html',
+						'presentation-homewallet.html',
+						'presentation-advertising.html',
+						'presentation-realtor.html',
+						'video-general.html',
+						'video-wizard.html',
+						'video-store.html',
+						'video-saas.html',
+						'video-realweb.html',
+						'video-mobile.html',
+						'video-homewallet.html',
+						'video-advertising.html',
+						'video-realtor.html',
+						'calculate-homewallet.html',
+						'calculate-advertising.html',
+						'calculate-realtor.html',
+						'register-homewallet.html',
+						'register-advertising.html',
+						'register-realtor.html'
+					]);
+				</script>
+-->
+			</div>
+		</div>
+	</body>
+</html>			

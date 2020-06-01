@@ -1,0 +1,83 @@
+div.Mask
+div.Window.Presentation(id="presentation-concept-advertizing")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				div.Slide
+					h1 Концепция работы
+					h2 На примере работы рекламного агентства
+					p Итак, у вас свое рекламного агентство. Очевидно, что в рекламе, так же как и везде, есть свое разделение труда. Дизайнер - рисует, агент - продает, водитель - развозит и т.д. Верно?
+					div
+						img(src=offset+"images/presentation-concept-advertizing-1.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере работы рекламного агентства
+					p Давайте будем платить всем, ровно столько, сколько они заработали. Скажем фиксированный, небольшой оклад плюс проценты с выполненных работ. Компания у нас не большая, все в деле!
+					div
+						img(src=offset+"images/presentation-concept-advertizing-2.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере работы рекламного агентства
+					p А что если агенты будут работать из дома? Обзванивать клиентов, ездить к ним. Опять же экономия на офисе, на оборудовании. Но как это все организовать? Как все это быстро и точно посчитать?
+					div
+						img(src=offset+"images/presentation-concept-advertizing-3.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере работы рекламного агентства
+					p Вам нужна информационная среда, которая бы позволила вам работать всем вместе, на любых устройствах, в режиме реального времени. Среда, которую легко настроить под вас, под ваши процессы!
+					div
+						img(src=offset+"images/presentation-concept-advertizing-4.png")
+				div.Slide
+					h1 Концепция работы
+					h2 На примере работы рекламного агентства
+					p Агент заносит заказ в программу. Заказ принимает в работу менеджер - дизайнер. Далее печатник его печатает, а водитель отвозит. У всех одна программа, на телефоне, планшете и т.д. Это и есть storewizard!
+					div
+						img(src=offset+"images/presentation-concept-advertizing-5.png")
+				div.Slide
+					h1 Концепция работы
+					h2 В итоге
+					ul
+						li Вы экономите на офисе. Ваши агенты мобильны и оперативны!
+						li Вы и ваши менеджеры, дизайнеры, печатники, видят статистику мгновенно. Прозрачная схема оплаты
+						li Вы легко масштабируете схему, легко набираете новый персонал в нужной для вас точке города
+						li Вы не покупаете ни какого специального оборудование, телефон или планшет - все что нужно агенту для работы. Минимальные первоначальные вложения
+				div.Slide
+					h1 Концепция работы
+					h2 Что дальше?
+					ul
+						li Вы можете ознакомится подробней с тем, как программа выглядет и как работает 
+							a(href="javascript: Main.Window.Open('presentation-general', true)") нажав здесь
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.AdvertizingConceptSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.AdvertizingConceptSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.AdvertizingConceptSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.AdvertizingConceptSlider.OnClickEnd();")
+script
+	Main.AdvertizingConceptSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.AdvertizingConceptSlider, '#presentation-concept-advertizing');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.AdvertizingConceptSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.AdvertizingConceptSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.AdvertizingConceptSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.AdvertizingConceptSlider);
+		}		
+	}

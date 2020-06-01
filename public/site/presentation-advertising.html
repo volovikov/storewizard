@@ -1,0 +1,55 @@
+<div class="Mask"></div>
+<div class="Window Presentation" id="presentation-advertising">
+	<div class="Header">
+		Презентация
+		<div class="Button Close" title="Закрыть окно" onclick="Main.Window.OnClickClose(this);"></div>
+	</div>
+	<div class="Body">
+		<div class="Display">
+			<div class="Tape">
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Это универсальная программа</h2>
+					<p>Тут некий текст, Тут некий текст, Тут некий текст, Тут некий текст, </p>
+				</div>
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Это универсальная программа</h2>
+					<p>Тут некий текст, Тут некий текст, Тут некий текст, Тут некий текст, </p>
+				</div>						
+				<div class="Slide">
+					<h1>Что такое storewizard?</h1>
+					<h2>Это универсальная программа</h2>
+					<p>Тут некий текст, Тут некий текст, Тут некий текст, Тут некий текст, </p>
+				</div>								
+			</div>
+		</div>
+		<div class="Control">
+			<div class="Buttons" align="center">
+				<div class="Icon Begin" onclick="Main.AdvertisingSlider.OnClickBegin();"></div>
+				<div class="Icon Back" onclick="Main.AdvertisingSlider.OnClickBack();"></div>
+				<div class="Icon Forward" onclick="Main.AdvertisingSlider.OnClickForward();"></div>
+				<div class="Icon End" onclick="Main.AdvertisingSlider.OnClickEnd();"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	Main.AdvertisingSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.AdvertisingSlider, '#presentation-advertising');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.AdvertisingSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.AdvertisingSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.AdvertisingSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.AdvertisingSlider);
+		}		
+	}
+</script>

@@ -1,0 +1,119 @@
+- locals.pageTitle = "Что такое storewizard?"
+	div.Center
+		div.Logotip(onclick="location.href='/'")
+		div.PrivateRoom
+			div.Item.Favorite(onclick="Main.OnClickFavorite(this);")
+			div.Item.Mailto(onclick="Main.Window.Open('form-callback');")
+			div.Item.Enter личный кабинет
+		div.Separator
+		div.TopMenu
+			div.Item.Active
+				a(href="/", title="home") В начало
+			div.Item
+				a(href="/solution/", title="solution") Решения
+			div.Item
+				a(href="/support/", title="support") Поддержка
+			div.Item
+				a(href="/blog/", title="blog") Блог
+		div.TabPanel
+			div.Header
+				div.Item.Active(onclick="Main.TabPanel.OnClickTab(0);", title="home-concept") Концепция работы
+				div.Item(onclick="Main.TabPanel.OnClickTab(1);",  title="home-production") Устройство программы
+				div.Item(onclick="Main.TabPanel.OnClickTab(2);", title="home-cost") Сколько стоит?
+				div.Item(onclick="Main.TabPanel.OnClickTab(3);", title="home-cost") Поддержка
+			div.Body
+				div.Item.Active
+					h1 Концепция работы
+					div.Block
+						p Storewizard - это простая, гибкая и универсальная программа для автоматизации любой вашей деятельности, которая не требует ни каких значительных первоначальных вложений. Давайте рассмотрим концепцию ее работы на следующих примерах
+						div.List
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-concept-transfer');") На примере транспортной компании
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-concept-advertizing');") На примере работы рекламного агентства
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-concept-realtor');") На примере риэлторского агентства
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-concept-eshop');") На примере работы интернет магазина
+					div.Picture
+						img(src=offset+"images/home-concept.png")
+				div.Item
+					h1 Устройство программы
+					div.Block
+						p Условно, программа состоит из двух частей: хранилище и мастера. Задача хранилища управлять информацией: добавить, удалить, изменить и найти. Задача мастера организация информации. Мастер может добавить, удалить изменить вкладку. Может манипулировать колонками во вкладке. Добавить колонку, удалить или изменить ее свойства.
+						div.List
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-store');") Подробней про хранилище и систему поиска
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-wizard');") Подробней про мастера
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-saas');") Подробней про аренду программы
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-realtime');") Подробней про оперативные свойства программы 
+							div.Link
+								a(href="javascript:Main.Window.Open('presentation-mobile');") Подробней про мобильная версию программы
+					div.Picture
+						img(src=offset+"images/storewizard-screenshot-1.png")
+				div.Item
+					h1 Сколько стоит?
+					div.Block
+						p Storewizard это программа которая сдается в аренду. Да, как офис или жилье. Стоимость рассчитывается в зависимости от срока пользования и типа программы. После прохождения процедуры регистрации и оплаты вам будет выдан отдельный вход в программу, который будет выглядеть как отдельный адрес, например: http://some.storewizard.ru
+						div.List
+							div.Link
+								a(href="javascript:Main.Window.Open('calculate');") Рассчитать стоимость
+							div.Link
+								a(href="javascript:Main.Window.Open('register');") Зарегистрироваться и приобрести программу
+					div.Picture
+						img(src=offset+"images/storewizard-screenshot-3.png")
+				div.Item
+					h1 Поддержка
+					div.Block
+						p Техническая поддержка, это важный элемент всех решений storewizard, которому уделяется повышенное внимание. Служба технической поддержки работает с понедельника по пятницу с 9:00 до 18:00.
+						div.List
+							div.Link
+								a(href="javascript:Main.Window.Open('form-callme');") Заказать обратный звонок
+							div.Link
+								a(href="javascript:Main.Window.Open('form-callback');") Показать форму обратной связи
+							div.Link
+								a(href="javascript:window.location.href='/support/'") Перейти в раздел Поддержка
+							div.Link
+								a(href="javascript:window.location.href='/blog/'") Перейти в раздел Блог
+					div.Picture
+						img(src=offset+"images/storewizard-screenshot-2.png")
+		div.SocialNetwork(align="center")
+			div.Item.Feed
+			div.Item.Facebook
+			div.Item.Twitter
+			div.Item.VK
+		div.Production			
+				- products.forEach(function(item) {
+					div.Item
+						div(style="background:url("+offset+"#{item.picture}) no-repeat center 60px")
+							div.Title
+								h2= item.name
+							div.Description= item.description
+							div.Control(align="center")
+								div.Item.Presentation(title="Презентация", onclick="Main.Window.Open('presentation-#{item.key}');")
+								div.Item.Price(title="Сколько стоит?", onclick="Main.Window.Open('calculate');")
+								div.Item.Take(title="Зарегистрироваться", onclick="Main.Window.Open('register');")
+				- });
+	div.Popup
+		include include/presentation-homewallet
+		include include/presentation-trade
+		include include/presentation-site
+		include include/presentation-general
+		include include/presentation-concept-transfer
+		include include/presentation-concept-advertizing
+		include include/presentation-concept-realtor
+		include include/presentation-concept-eshop
+		include include/presentation-store
+		include include/presentation-wizard
+		include include/presentation-saas
+		include include/presentation-realtime
+		include include/presentation-mobile		
+		include include/form-callback
+		include include/form-calculate
+		include include/form-register
+		include include/form-onlinechat
+		include include/form-callme
+		include include/messages

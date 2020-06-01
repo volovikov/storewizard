@@ -1,0 +1,867 @@
+@font-face {
+    font-family: 'PTSansRegular';
+    src: url('/site/css/pts55f-webfont.eot');
+    src: url('/site/css/pts55f-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/site/css/pts55f-webfont.woff') format('woff'),
+         url('/site/css/pts55f-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+	margin: 0;
+	padding: 0;	
+}
+html {
+	height: 100%;
+	width: 100%;	
+}
+img {
+	border: none;
+}
+body {
+	width: 100%;
+	height: 100%;
+	color: #d2d2d2;
+	font: normal 14px Arial;
+	background-color: #3b8cbb;
+}
+.OnlineChat {
+	position: fixed;
+	width: 128px;
+	text-align: center;
+	/*height: 24px;*/
+	color: #767676;
+	background-color: white;
+	border-bottom: solid 2px #90d0e4;
+	font: normal 12px Arial;
+	cursor: pointer;
+	padding: 5px 10px;
+	top: 47%;
+	left: -61px;;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg); 
+	-ms-transform:rotate(-90deg);
+}
+.OnlineChat.Offline {
+    display: none;
+}
+.Center {
+	width: 1120px;
+	margin: 0 auto;
+}
+.Logotip {
+	width: 207px;
+	height: 22px;
+	margin-top: 30px;
+	background: url(../images/logo-white.png) top left no-repeat;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+}
+.Short {
+	margin-top: 15px;
+}
+.Row {
+	
+}
+.Col {
+	display: inline-block;
+	vertical-align: top;
+}
+.TopMenu {
+	height: 35px;
+	margin-top: 22px;
+	margin-right: 8px;
+	display: inline-block;
+	vertical-align: top;
+	float: right;	
+}
+.TopMenu .Item {
+	display: inline-block;
+	padding: 0 6px;
+	height: 30px;
+}
+.TopMenu .Item.Active {
+	background: url(../images/pointer.gif) bottom center no-repeat;
+}
+.TopMenu .Item a {
+	color: #d2d2d2;
+	font: bold 12px Arial;
+	text-decoration: none;
+}
+.TopMenu .Item a:hover {
+	text-decoration: underline;
+}
+.FooterMenu {
+	height: 82px;
+	border: none;
+	border-top-width: 1px;
+	border-top-color: #96d5e7;
+	border-top-style: solid;
+	display: inline-block;
+}
+.FooterMenu .Item {
+	display: inline-block;
+	padding: 3px 10px 0 0;
+}
+.FooterMenu .Item a {
+	color: #96d5e7;
+	font: normal 12px Arial;
+	text-decoration: none;
+}
+.FooterMenu .Item.Active a {
+	color: #024575;
+}
+.FooterMenu .Item a:hover {
+	text-decoration: underline;
+}
+.Separator {
+	width: 1px;
+	height: 22px;
+	background: url(../images/separator.gif) center center no-repeat;
+	display: inline-block;
+	float: right;
+	margin-top: 22px;
+}
+.PrivateRoom {
+	height: 35px;
+	margin-top: 22px;
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+}
+.PrivateRoom .Item {
+	width: 15px;
+	height: 15px;
+	margin: 0 3px;
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: top;
+}
+.PrivateRoom .Favorite {
+	background: url(../images/favorite.png) center center no-repeat;
+	margin-left: 10px;
+}
+.PrivateRoom .Mailto {
+	background: url(../images/email.png) center center no-repeat;	
+}
+.PrivateRoom .Enter {
+	background: url(../images/privatekey.png) left center no-repeat;
+	width: 85px;
+	font: normal 11px arial;
+	color: white;
+	padding-left: 20px;
+}
+.TabPanel {
+	margin-top: 40px;
+}
+.TabPanel .Header {
+	background: url(../images/tab-panel-header-body-bg.gif) bottom left repeat-x;
+}
+.TabPanel .Header .Item {
+	display: inline-block;
+	padding: 5px 10px;
+	font: normal 12px Arial;
+	color: #d2d2d2;
+	text-decoration: none;	
+	cursor: pointer;
+}
+.TabPanel .Header .Item.Active {
+	background: url(../images/tab-panel-header-active-bg.gif) bottom left repeat-x;
+	color: #767676;
+}
+.TabPanel .Body {
+	background: #2c79af url(../images/tab-panel-header-body-bg.gif) bottom left repeat-x;
+	padding: 25px 40px;
+}
+.TabPanel .Body.Blog {
+	background: #3b8cbb;
+	padding: 0;
+}
+.TabPanel .Body.Blog .Blog {
+	width: 720px;
+	display: inline-block;
+	vertical-align: top;	
+	padding: 20px 10px 0 0 ;
+}
+.TabPanel .Body.Blog .News {
+	width: 355px;
+	display: inline-block;
+	vertical-align: top;
+	background: url(../images/tab-panel-vertical-bg.gif) top left repeat-y;
+	padding: 20px 0 0 30px;;
+}
+.TabPanel .Body .Item {
+	display: none;
+}
+.TabPanel .Body .Control .Item {
+	visibility: visible;
+}
+.TabPanel .Body .Item.Active {
+	display: block;
+}
+h1 {
+	color: #eeeeee;
+	font: normal 58px 'PTSansRegular', Arial;
+}
+.TabPanel .Body .Block {
+	width: 590px;	
+	font: normal 18px 'PTSansRegular', Arial;
+	color: #d2d2d2;
+	display: inline-block;
+	vertical-align: top;
+}
+.TabPanel .Body .Block p {
+	margin: 10px 0 20px 0;
+}
+.TabPanel .Body .Picture {
+	display: inline-block;
+	vertical-align: top;
+}
+.TabPanel .Body .Icon {
+	width: 41px;
+	height: 41px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 10px;
+}
+.TabPanel .Body .Icon.Video {
+	background: url(../images/icon-video.png) top left no-repeat;
+}
+.TabPanel .Body .Icon.Presentation {
+	background: url(../images/icon-presentation.png) 0 3px no-repeat;	
+}
+.TabPanel .Body .Form .Label {
+	color: #96d5e7;
+	font: normal 12px Arial;
+}
+.SocialNetwork {
+	height: 72px;
+}
+.SocialNetwork .Item {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	margin: 0 5px;
+	margin-top: 23px;
+	cursor: pointer;
+}
+.SocialNetwork .Item.Feed {
+	background: url(../images/icon-feed.png) center center no-repeat;
+}
+.SocialNetwork .Item.Facebook {
+	background: url(../images/icon-facebook.png) center center no-repeat;
+}
+.SocialNetwork .Item.Twitter {
+	background: url(../images/icon-twitter.png) center center no-repeat;
+}
+.SocialNetwork .Item.VK {
+	background: url(../images/icon-vk.png) center center no-repeat;
+}
+.Production .Row, .Support .Row {
+    /*background: url(../images/separator-gradient.png) top center no-repeat;*/
+}
+.Production, .Support {
+	
+}
+.Production .Item, .Support .Item {
+	width: 353px;
+	display: inline-block;
+	background: url(../images/separator-product-vert.gif) right top repeat-y, url(../images/separator-gradient.png) top center no-repeat; 
+	vertical-align: top;
+	padding: 20px 14px 0 6px;
+}
+.Production .Item:nth-of-type(3), .Support .Item:nth-of-type(3) {
+	background: url(../images/separator-gradient.png) top center no-repeat; 
+}
+h2 {
+	color: #eeeeee;
+	font: normal 36px 'PTSansRegular', Arial;		
+}
+.Production .Item h2, .Support .Item h2 {
+	text-align: center;
+}
+.Production .Control,  .Support .Control {
+	height: 118px;
+	margin-top: 15px;
+}
+.Production .Control .Item, .Support .Control .Item {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	vertical-align: top;
+	background: none;
+	cursor: pointer;
+    padding: 0 5px;
+}
+.Production .Control .Item.Video, .Support .Control .Item.Video {
+	background: url(../images/icon-video-small.png) center center no-repeat;
+}
+.Production .Control .Item.Presentation, .Support .Control .Item.Presentation {
+	background: url(../images/icon-presentation-small.png) center 3px no-repeat;
+}
+.Production .Control .Item.Price {
+	background: url(../images/icon-price-small.png) center 0px no-repeat;
+}
+.Production .Control .Item.Take {
+	background: url(../images/icon-take-small.png) center center no-repeat;
+}
+.Production .Item .Description, .Support .Item .Description {
+	font: normal 14px 'PTSansRegular', Arial;	
+	text-align: center;	
+	height: 90px;
+}
+.Production .Item .Title, .Support .Item .Title {
+	height: 290px;
+}
+.Production .Homewallet {
+	background: url(../images/icon-homewallet-big.png) center 60px no-repeat;
+}
+.Production .Advertising {
+	background: url(../images/icon-advertising-big.png) center 60px no-repeat;
+}
+.Production .Realtor {
+	background: url(../images/icon-realtor-big.png) center 60px no-repeat;
+}
+.Support .Calculator {
+	background: url(../images/icon-calculator-big.png) center 60px no-repeat;
+}
+.Support .Technology {
+	background: url(../images/icon-technology-big.png) center 60px no-repeat;	
+}
+.Support .Service {
+	background: url(../images/icon-support-big.png) center 60px no-repeat;	
+}
+.Support .Control .Gift {
+	background: url(../images/icon-gift.png) center center no-repeat;
+}
+.Support .Control .Chat {
+	background: url(../images/icon-chat.png) center center no-repeat;
+}
+.Support .Control .Callback {
+	background: url(../images/icon-callback.png) center center no-repeat;
+}
+.Support .Control .Sendmail {
+	background: url(../images/icon-sendmail.png) center center no-repeat;
+}
+.TabPanel .Control {
+	margin-top: 40px;
+}
+.TabPanel .Control .Link {
+	display: inline-block;
+	padding: 0 20px 0 5px;
+	background: url(../images/pointer-right.gif) center right no-repeat;
+}
+.TabPanel .Control .Link:first-child {
+	padding-left: 0px;
+}
+.TabPanel .Control .Link:last-child {
+	background-image: none;
+}
+.TabPanel .Control .Link a {
+	color: white;
+	font-size: 18px;
+}
+.TabPanel .List .Link {
+	display: block;
+	padding: 0 0 0 20px;
+	background: url(../images/pointer-right.gif) center left no-repeat;	
+	line-height: 35px;
+	vertical-align: center;
+}
+.TabPanel .List .Link a {
+	color: white;
+	font-size: 18px;	
+}
+.Popup .Window {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	box-shadow: 2px 5px 12px #2f7095;
+	visibility: hidden;
+}
+.Popup .Window.Active {
+	visibility: visible;
+}
+.Popup .Window .Body {
+	background-color: #ffffff;
+}
+.Popup .Window .Header {
+	height: 30px;
+	background: #96d5e7 url(../images/icon-header-window.png) 8px 6px no-repeat;
+	color: white;
+	font: normal 12px Arial;
+	text-align: center;
+	line-height: 29px;
+}
+.Popup .Window .Header .Title {
+	display: inline-block;
+}
+.Popup .Window .Header .Button.Close {
+	background: #96d5e7 url(../images/icon-header-close.png) center center no-repeat;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	float: right;
+}
+.Popup .Mask {
+	width: 100%;
+	height: 600px;	
+	background-color: #3b8cbb;
+	opacity: 0.6;
+	position: fixed;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+}
+.Popup .Mask.Active {
+	visibility: visible;
+}
+.Window .Form {
+	padding: 20px;
+}
+.Form {
+	color: #4c4c4c;
+	font: normal 12px Arial;	
+}
+.Form .Field {
+	padding-bottom: 15px;
+	margin: 0;
+}
+.Form .Label {
+	padding-bottom: 5px;
+}
+.Form input {
+	width: 220px;
+	background: url(../images/input-bg.gif) repeat-x;
+	border: solid 1px #c1c1c1;
+	height: 20px;
+	padding: 0 3px;
+	outline: none;
+	color: #4c4c4c;
+}
+.Form textarea {
+	width: 220px;
+	background: white url(../images/input-bg.gif) repeat-x;
+	border: solid 1px #c1c1c1;
+	outline: none;
+	color: #4c4c4c;
+	padding: 0 3px;
+	font: normal 12px Arial;
+}
+.Form .Field .Answer {
+	background: url(../images/input-bg.gif) repeat-x;
+	border: solid 1px #c1c1c1;
+	height: 20px;
+	padding: 0 3px;
+	outline: none;
+	color: #4c4c4c;    
+    overflow: auto;
+}
+.Form .Field .Answer .Me {
+	color: #2c79af;
+}
+.Form .Field .Answer .He {
+	color: #4c4c4c;
+    margin-bottom: 5px;
+}
+.Form input:focus {
+	border: solid 1px #848484;
+}
+.Form textarea:focus {
+	border: solid 1px #848484;
+}
+.Form .Error input, .Form .Error textarea {
+	border: solid 1px #ff7870;
+	background: #ffeeee url(../images/input-error-bg.gif) bottom repeat-x;
+}
+.Form .Error .Tip {
+	font: normal 12px Arial;
+	color: #ff4338;
+}
+.Form .Explanation {
+	margin-top: 10px;
+	color: #63a95e;
+	font: normal 12px Arial;
+}
+.Form .Popup {
+	display: inline-block;
+	vertical-align: top;
+}
+.Form .Select .Trigger {
+	display: inline-block;
+	width: 17px;
+	height: 22px;
+	background: url(../images/input-trigger.gif) left top;
+	/*margin: 0 0 0 -3px;*/
+	padding: 0;
+	cursor: pointer;	
+}
+.Form .Select .Options {
+	position: absolute;
+	box-shadow: 2px 5px 12px #999;
+	border: 1px solid #cccccc;
+	background-color: white;
+	overflow: auto;
+	overflow-x: hidden;	
+	display: none;
+	max-height: 150px;
+}
+.Form .Select .Options.Active {
+	display: inline-block;
+}
+.Form .Select .Options .Item, .MultiSelect .Options .Item {
+	padding: 2px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+.Form .Select .Options .Item:hover, .MultiSelect .Options .Item:hover {
+	background-color: #f0f0f0;
+	border: 1px dotted; 
+}
+.Popup .Form .Summary {
+	background-color: #96d5e7;
+	padding: 8px 10px;
+	color: white;
+}
+.Window .Control {
+	border-top: 4px;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-style: solid;
+	border-color:  #96d5e7;
+	height: 62px;
+}
+.Control .Button {
+	display: inline-block;
+	border-radius: 3px 3px 3px 3px;
+	border: solid 1px #c4c4c4;	
+	margin: 0 1px;
+}
+.Control .Button .Border {
+	border: solid 1px white;
+	padding: 3px 10px 5px 10px;
+	background: url(../images/button-bg.gif) center left repeat-x;
+	font: normal 11px Arial;
+	color: #4c4c4c;
+	height: 12px;
+	cursor: pointer;
+	border-radius: 3px 3px 3px 3px;
+}
+.Control .Button:hover {
+	border-color: #85a5d0;
+}
+.Control .Button .Border:hover {
+	border-color: #f5feff;
+	background: url(../images/button-hover-bg.gif) center left repeat-x;
+}
+.Control .Button:active {
+	border-color: #7697c1;
+}
+.Control .Button .Border:active {
+	border-color: transparent;
+	border-radius: 2px 2px 2px 2px;
+	background: url(../images/button-active-bg.gif) center left repeat-x;
+}
+.Control .Buttons {
+	margin: 12px 20px 0 20px;
+}
+.Window .Control .Icon {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+}
+.Window .Control .Icon.Begin {
+	background: url(../images/icon-begin.png) center center no-repeat;
+}
+.Window .Control .Icon.Back {
+	background: url(../images/icon-back.png) center center no-repeat;
+}
+.Window .Control .Icon.Forward {
+	background: url(../images/icon-forward.png) center center no-repeat;
+}
+.Window .Control .Icon.End {
+	background: url(../images/icon-end.png) center center no-repeat;
+}
+.Window .Control .Icon.Reload {
+	background: url(../images/icon-reload.png) center center no-repeat;
+}
+.Window .Control .Icon.Play {
+	background: url(../images/icon-forward.png) center center no-repeat;
+}
+.Window .Control .Icon.Sound {
+	background: url(../images/icon-sound.png) center center no-repeat;
+}
+.Popup .Window.Register {
+	width: 550px;
+	left: 50%;
+	top: 50%;
+	margin: -255px 0 0 -300px;
+}
+.Popup .Window.Message {
+	width: 420px;	
+	left: 50%;
+	top: 50%;
+	margin: -60px 0 0 -210px;
+}
+.Popup .Window.Presentation {
+	width: 986px;	
+	left: 50%;
+	top: 50%;
+	margin: -268px 0 0 -493px;	
+}
+.Popup .Window.Video {
+	width: 960px;	
+	left: 50%;
+	top: 50%;
+	margin: -250px 0 0 -480px;		
+}
+.Popup .Window.Calculate {
+	width: 550px;
+	left: 50%;
+	top: 50%;
+	margin: -200px 0 0 -260px;
+}
+.Popup .Window.Callback {
+	width: 550px;
+	left: 50%;
+	top: 50%;
+	margin: -210px 0 0 -260px;	
+}
+.Popup .Window .Text {
+	padding: 20px 20px 20px 65px;
+	color: #4c4c4c;
+	font: normal 12px Arial;
+	min-height: 20px;
+}
+.Popup .Window .Text.Error {
+	margin-top: 0;
+	background: url(../images/icon-error.gif) 20px 12px no-repeat;
+}
+.Popup .Window .Text.Info {
+	background: url(../images/icon-info.gif) 20px 12px no-repeat;
+}
+.Popup .Window .Text.Warning {
+	background: url(../images/icon-warning.gif) 20px 12px no-repeat;
+}
+.Popup .Window .Text.Question {
+	background: url(../images/icon-question.gif) 20px 12px no-repeat;
+}
+.Window .Display {
+	padding-top: 20px;
+	margin: 0 20px 20px 20px;
+	height: 400px;
+
+	overflow: hidden;
+}
+.Window .Tape {	
+	width: 100%;
+	height: 350px;	
+	width: 2000px;
+	position: relative;
+}
+.Window .Tape .Slide {
+	height: 380px;
+	width: 760px;
+	display: inline-block;
+	vertical-align: top;
+	background-color: #aeb2b6;
+	margin-right: 10px;
+	padding: 10px;
+}
+.Slide h1 {
+	font-size: 36px;
+	color: white;	
+}
+.Slide h2 {
+	font-size: 22px;	
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.Slide p {
+	margin-top: 5px;
+	color: #eee;
+	font: normal 16px 'PTSansRegular', Arial;
+	padding-bottom: 10px;
+}
+.Slide {
+	color: #eee;
+}
+.Slide ul {
+	padding-left: 20px;
+}
+.Slide a {
+	color: white;
+}
+.Slide ul li {
+	padding: 5px 0;
+}
+.Question {
+	font: normal 36px 'PTSansRegular', Arial;
+	color: #eeeeee;
+	padding: 20px 0 0 0;
+}
+.Question .Answer {
+	font: normal 14px 'PTSansRegular', Arial;
+	color: #d2d2d2;
+	padding: 10px 0 0 0;
+}
+.Middle .Item {
+	width: 47px !important;
+	height: 47px !important;
+}
+.Middle .Chat {
+	background: url(../images/icon-chat-middle.png) no-repeat center center !important;
+}
+.Blog .Control .Date, .News .Control .Date {
+	display: inline-block;
+	vertical-align: top;
+	background: url(../images/icon-date.png) left center no-repeat;
+	padding-left: 25px;
+	height: 20px;
+	font: normal 12px Arial;
+	line-height: 20px;
+	color: #7bbdda;
+}
+.Blog .Control .Commit, .News .Control .Commit {
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: top;
+	background: url(../images/icon-commit.png) left 2px no-repeat;
+	padding-left: 30px;
+	height: 20px;
+	font: normal 12px Arial;
+	line-height: 20px;
+	color: #7bbdda;
+}
+.Blog .Intro {
+	font: normal 21px 'PTSansRegular', Arial;
+	margin-bottom: 15px;
+}
+.Blog p, .News .Short {
+	font: normal 14px 'PTSansRegular', Arial;
+}
+.Blog .Record {
+	margin-top: 30px;
+}
+.Blog .Record:first-child {
+	margin-top: 0;
+}
+@media (max-width: 799px) and (min-width: 500px) {
+    .Center {
+        width: 500px;
+    }    
+    .Logotip {
+        display: block;
+    }
+    .OnlineChat {
+        display: none;
+    }
+    .TopMenu {
+        display: block;
+        float: left;
+    }
+    .TabPanel .Header .Item {
+        display: block;
+    }
+    .TabPanel {
+        margin-top: 60px;
+    }
+    h1 {
+        font: normal 44px 'PTSansRegular', Arial;
+    }
+    .TabPanel .Body {
+        padding: 10px 20px;
+    }
+    .TabPanel .Body .Block {
+        width: 100%;
+    }
+    .Production .Item, .Support .Item {
+        width: 96%;        
+        background: url(../images/separator-gradient.png) top center no-repeat;
+    }
+    .Production .Control, .Support .Control {
+        height: 60px;
+    }
+    .Production .Control .Item, .Support .Control .Item {
+        width: 40px;
+    }    
+}
+@media (max-width: 949px) and (min-width: 800px) {
+    .Center {
+        width: 800px;
+    }
+    .Logotip {
+        display: block;
+    }
+    .OnlineChat {
+        display: none;
+    }
+    .TopMenu {
+        display: block;
+        float: left;
+    }
+    .TabPanel .Header .Item {
+        display: block;
+    }
+    .TabPanel {
+        margin-top: 60px;
+    }
+    h1 {
+        font: normal 44px 'PTSansRegular', Arial;
+    }
+    .TabPanel .Body {
+        padding: 10px 20px;
+    }
+    .TabPanel .Body .Block {
+        width: 100%;
+    }
+    .Production .Item, .Support .Item {
+        width: 96%;        
+        background: url(../images/separator-gradient.png) top center no-repeat;
+    }
+    .Production .Control, .Support .Control {
+        height: 60px;
+    }
+    .Production .Control .Item, .Support .Control .Item {
+        width: 40px;
+    }
+}
+@media (max-width: 1200px) and (min-width: 950px) {
+    .Center {
+        width: 950px;
+    }    
+    .TabPanel .Body .Block {
+        width: 424px;
+    }
+    .Production .Item, .Support .Item {
+        width: 455px;
+    }
+    .TabPanel .Header .Item {
+        font: normal 13px Arial;
+    }
+    .Production .Item .Description, .Support .Item .Description {
+        font: normal 15px 'PTSansRegular', Arial;
+    }    
+    .TabPanel .Body.Blog .Blog {
+        width: 555px;
+    }
+    .Production .Item:nth-of-type(3), .Support .Item:nth-of-type(3) {
+        background: url(../images/separator-product-vert.gif) right top repeat-y, url(../images/separator-gradient.png) top center no-repeat;         
+    }
+    .Production .Item:nth-of-type(2), .Support .Item:nth-of-type(2) {
+        background: url(../images/separator-gradient.png) top center no-repeat; 
+    }    
+    .Window .Control .Icon {
+        width: 40px;
+    }
+}

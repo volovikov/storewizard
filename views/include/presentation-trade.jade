@@ -1,0 +1,80 @@
+div.Mask
+div.Window.Presentation(id="presentation-trade")
+	div.Header Презентация
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Display
+			div.Tape
+				div.Slide
+					h1 Организация торговли
+					h2 Введение
+					p Организация торговли, это специальная конфигурация storewizard для организации торговли и учета взаимоотношений с заказчиками (CRM). Конфигурация имеет ряд особенностей:
+					ul 
+						li В ее состав входит Мастер, а это значит что вы всегда можете изменить/добавить вкладку, изменить/добавить поле и т.д.
+						li В ее состав входит специальная вкладка Календарь. С ее помощью можно легко организовать свою работу
+				div.Slide 
+					h1 Организация торговли
+					h2 Пользователи
+					p Количество пользователей в конфигурации Торговля не ограничено. Мастер доступен только пользователям с ролью Администратор. С его помощью вы сможете легко добавить и другие роли
+					div
+						img(src=offset+"images/presentation-trade-1.png")
+				div.Slide 
+					h1 Организация торговли
+					h2 Клиенты
+					p Вы можете внести любое количество телефонов, просто перечислив их через запятую, а количество контактов программа посчитает сама. 
+					div
+						img(src=offset+"images/presentation-trade-2.png")
+				div.Slide
+					h1 Организация торговли
+					h2 Календарь
+					p Очень легко планировать свою работу, когда перед глазами такой календарь. Можно запланировать встречи, можно создать календарный план и т.д.
+					div
+						img(src=offset+"images/presentation-trade-3.png")
+				div.Slide 
+					h1 Организация торговли
+					h2 Торговые представители
+					p Используйте мобильную версию Торговли чтобы организовать работу торговых представителей. Как только вы назначите задачу на выполнение конкретному агенту, она сразу же появится в его телефоне.
+					div
+						img(src=offset+"images/presentation-trade-4.png")
+				div.Slide
+					h1 Организация торговли
+					h2 Что дальше?
+					ul
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-store', true)") Хранилище
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-wizard', true)") Мастере
+						li Вы можете узнать больше о 
+							a(href="javascript: Main.Window.Open('presentation-mobile', true)") Мобильной версии программы
+						li Вы можете открыть 
+							a(href="javascript: Main.Window.Open('calculate', true)") Калькулятор и прикинуть сколько это будет стоить
+						li Вы можете попробовать программу, открыть ее 
+							a(href="/demo.storewizard.ru") демо версию
+						li Вы можете прочитать 
+							a(href="/support/") отзывы о программе
+						li Вы можете 
+							a(href="javascript: Main.Window.Open('register', true)") приобрести программу
+		div.Control
+			div.Buttons(align="center")
+				div.Icon.Begin(onclick="Main.TradeSlider.OnClickBegin();")
+				div.Icon.Back(onclick="Main.TradeSlider.OnClickBack();")
+				div.Icon.Forward(onclick="Main.TradeSlider.OnClickForward();")
+				div.Icon.End(onclick="Main.TradeSlider.OnClickEnd();")
+script
+	Main.TradeSlider = {
+		OnReady: function() {
+			Main.Slider.OnReady.call(Main.TradeSlider, '#presentation-trade');
+		},
+		OnClickBegin: function() {
+			return Main.Slider.OnClickBegin.call(Main.TradeSlider);
+		},
+		OnClickEnd: function() {
+			return Main.Slider.OnClickEnd.call(Main.TradeSlider);
+		},
+		OnClickBack: function() {
+			return Main.Slider.OnClickBack.call(Main.TradeSlider);
+		},
+		OnClickForward: function() {
+			return Main.Slider.OnClickForward.call(Main.TradeSlider);
+		}		
+	}

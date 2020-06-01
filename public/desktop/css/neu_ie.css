@@ -1,0 +1,41 @@
+/*!
+ * @project: Нита Электронный Университет
+ * @author volovikov
+ */
+
+ #header {
+	 height: 80px;
+ }
+#header .logo {
+	height: 33px;
+	margin: 11px 0px 0px 20px;
+	display: inline-block;
+	width: 40%;
+	padding: 4px 0px 0px 60px;	
+    background: url(../images/logo-color.png) no-repeat left top;
+}
+#header .block {
+	font-size: 12px;
+	position: absolute;	
+	color: #ccc;
+	width: 230px;
+	float: right;
+	top: 26px;
+	width: 98%;
+	text-align: right;
+}
+#header .block .private {
+	display: inline;
+}
+#header .block .exit {
+	display: inline;
+}
+#tab-panel {
+	height: 26px;
+}
+#left-panel {
+	top: 86px  !important;
+}
+#right-panel {
+	top: 86px  !important;	
+}

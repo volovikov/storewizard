@@ -1,0 +1,107 @@
+- locals.pageTitle = "Решения"
+	div.Center
+		div.Logotip(onclick="location.href='/'")
+		div.PrivateRoom
+			div.Item.Favorite(onclick="Main.OnClickFavorite(this);")
+			div.Item.Mailto(onclick="Main.Window.Open('form-callback');")
+			div.Item.Enter личный кабинет
+		div.Separator
+		div.TopMenu
+			div.Item
+				a(href="/", title="home") В начало
+			div.Item.Active
+				a(href="/solution/", title="solution") Решения
+			div.Item
+				a(href="/support/", title="support") Поддержка
+			div.Item
+				a(href="/blog/", title="blog") Блог
+		div.TabPanel
+			div.Header
+				- products.forEach(function(item, index) {
+					- if (index == 0)
+						div.Item.Active(onclick="Main.TabPanel.OnClickTab(#{index});") #{item.name}
+					- else
+						div.Item(onclick="Main.TabPanel.OnClickTab(#{index});") #{item.name}
+				- });
+			div.Body
+				- products.forEach(function(item, index) {
+					- if (index == 0)
+						div.Item.Active
+							h1 #{item.name}
+							div.Block
+								p #{item.description}
+								div.Control
+									div.Link 
+										a(href="javascript: Main.Window.Open('presentation-#{item.key}')") Посмотреть
+									div.Link 
+										a(href="#") Попробовать
+									div.Link 
+										a(href="javascript: Main.Window.Open('register')") Приобрести
+								div(style="margin-top: 135px;")
+									div.Icon.Video(title="Смотреть видео", onclick="Main.Window.Open('video-#{item.key}')")
+									div.Icon.Presentation(title="Смотреть презентацию", onclick="Main.Window.Open('presentation-#{item.key}')")
+							div.Picture
+								img(src=offset+"#{item.screenshot}")
+					- else
+						div.Item
+							h1 #{item.name}
+							div.Block
+								p #{item.description}
+								div.Control
+									div.Link 
+										a(href="javascript: Main.Window.Open('presentation-#{item.key}')") Посмотреть
+									div.Link 
+										a(href="#") Попробовать
+									div.Link 
+										a(href="javascript: Main.Window.Open('register')") Приобрести
+								div(style="margin-top: 135px;")
+									div.Icon.Video(title="Смотреть видео", onclick="Main.Window.Open('video-#{item.key}')")
+									div.Icon.Presentation(title="Смотреть презентацию", onclick="Main.Window.Open('presentation-#{item.key}')")
+							div.Picture
+								img(src=offset+"#{item.screenshot}")
+				- });
+		div.SocialNetwork(align="center")
+			div.Item.Feed
+			div.Item.Facebook
+			div.Item.Twitter
+			div.Item.VK
+		div.Support
+			div.Row
+				div.Item
+					div.Calculator
+						div.Title(onclick="Main.Window.Open('calculate')", style="cursor: pointer;")
+							h2 Сколько это стоит?
+						div.Description​Воспользуйтесь нашим калькулятором, для того, чтобы рассчитать стоимость своих затрат. К оплате принимаются все виды пластиковых карт, а также все виды электронных денег. Все быстро и просто.
+						div.Control(align="center")
+							div.Item.Gift(title="Сюрприз!")
+				div.Item
+					div.Technology
+						div.Title(onclick="Main.Window.Open('presentation-saas')", style="cursor: pointer;")
+							h2 Как это работает?
+						div.Description Вы платите арендную плату, просто арендуя у нас программу. Вам не нужно иметь в штате технических специалистов и дорогое оборудование. Возьмите столько, сколько вам нужно.
+						div.Control(align="center")
+							div.Item.Video(title="Смотреть видео", onclick="Main.Window.Open('video-saas')")
+							div.Item.Presentation(title="Смотреть презентацию", onclick="Main.Window.Open('presentation-saas')")
+				div.Item
+					div.Service
+						div.Title
+							h2 Техподдержка
+						div.Description Техническая поддержка важный элемент любой деятельности. Вы всегда можете позвонить нам или написать на электронную почту. К вашим услугам сервис faq и форум
+						div.Control(align="center")
+							div.Item.Chat(title="Онлайн чат")
+							div.Item.Callback(title="Позвоните мне")
+							div.Item.Sendmail(title="Отправить сообщение")
+	div.Popup
+		include include/presentation-general
+		include include/presentation-store
+		include include/presentation-wizard
+		include include/presentation-saas
+		include include/presentation-realtime
+		include include/presentation-mobile
+		include include/presentation-homewallet
+		include include/presentation-trade
+		include include/presentation-site
+		include include/form-callback
+		include include/form-calculate		
+		include include/form-register
+		include include/messages

@@ -1,0 +1,254 @@
+/*!
+ * @project: Нита Электронный Университет
+ * @author volovikov
+ */
+body {
+    font-family:'lucida grande',tahoma,arial,sans-serif;
+    font-size:11px;
+	margin: 0px;
+	padding: 0px;
+	background-color: #eee;
+}
+a {
+    color:white;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+#toolbar {
+	margin: -10px 0px 0px -10px;
+}
+#header {
+	height: 90px;
+	width: 100%;
+    background: url(../images/header-bg.png) repeat-x top left;	
+	top:0;
+	left:0;
+	position: absolute;
+}
+#header table {
+	width: 100%;
+}
+#header .logo {
+	height: 33px;
+	margin: 11px 0px 0px 20px;
+	display: inline-block;
+	padding: 4px 0px 0px 60px;	
+    background: url(../images/logo-color.png) no-repeat left top;
+}
+#header .logo h1 {
+	color: #083772;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: Trebuchet MS, Verdan, Arial;	
+}
+#header .block {
+	font-size: 12px;
+	position: absolute;	
+	color: #ccc;
+	width: 230px;
+	float: right;
+	top: 26px;
+	width: 98%;
+	text-align: right;
+}
+#header .private {
+	display: inline-block;
+	text-align: right;
+}
+#header .private a {
+	color: #555;
+}
+#header .private a:hover {
+	text-decoration: underline;
+}
+#header .exit {
+	display: inline-block;
+	text-align: right;
+}
+#header .exit a {
+	color: #555;	
+}
+#header .exit a:hover {
+	text-decoration: underline;
+}
+.version {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2em;
+	width: 40%;
+	color: white;
+	margin: 0 48%;
+}
+#tab-panel {
+	margin-top: 11px;
+}
+#welcome {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/sky.jpg) top center;
+}
+#welcome .logo {
+	width: 100%;
+	height: 93px;
+	padding-top: 150px;
+	background: url(../images/logo-white.png) no-repeat center;
+}
+#welcome .client {	
+	width: 98%;
+	color: white;
+	text-align: center;
+	font-size: 46px;
+	text-shadow: 1px 1px 1px #14485e;
+}
+.add {
+	background-image: url(../images/default/fam/add.png) !important; 
+	background-repeat: no-repeat; 	
+}
+.delete {
+	background-image: url(../images/default/fam/delete.gif) !important; 
+	background-repeat: no-repeat; 	
+}
+.transfere {
+	background-image: url(../images/default/fam/folder_go.png) !important; 
+	background-repeat: no-repeat; 	
+}
+.book { 
+	background-image: url(../images/default/fam/book.png) !important; 
+	background-repeat: no-repeat; 
+}
+.student { 
+	background-image: url(../images/default/fam/user.png) !important; 
+	background-repeat: no-repeat; 
+}
+.group  { 
+	background-image: url(../images/default/fam/folder_user.png) !important; 
+	background-repeat: no-repeat; 
+}
+.teacher { 
+	background-image: url(../images/default/fam/user_gray.png) !important; 
+	background-repeat: no-repeat; 
+}
+.lecture { 
+	background-image: url(../images/default/fam/text.png) !important; 
+	background-repeat: no-repeat; 
+}
+.chapter { 
+	background-image: url(../images/default/fam/text.png) !important; 
+	background-repeat: no-repeat; 
+}
+.laboratory { 
+	background-image: url(../images/default/fam/page_white_edit.png) !important; 
+	background-repeat: no-repeat; 
+}
+.part { 
+	background-image: url(../images/default/fam/page_white_edit.png) !important; 
+	background-repeat: no-repeat; 
+}
+.test { 
+	background-image: url(../images/default/fam/text_signature.png) !important; 
+	background-repeat: no-repeat; 
+}
+.manual { 
+	background-image: url(../images/default/fam/resultset_next.png) !important; 
+	background-repeat: no-repeat; 
+}
+.auto { 
+	background-image: url(../images/default/fam/cursor.png) !important; 
+	background-repeat: no-repeat; 
+}
+.property { 
+	background-image: url(../images/default/fam/vcard_edit.png) !important; 
+	background-repeat: no-repeat; 
+}
+.summary { 
+	background-image: url(../images/default/fam/chart_bar.png) !important; 
+	background-repeat: no-repeat; 
+}
+.composition { 
+	background-image: url(../images/default/fam/page_white_edit.png) !important; 
+	background-repeat: no-repeat; 
+}
+.progress { 
+	background-image: url(../images/default/fam/lightning.png) !important; 
+	background-repeat: no-repeat; 
+}
+.folder { 
+	background-image: url(../images/default/fam/folder.png) !important; 
+	background-repeat: no-repeat; 
+}
+.question {
+	
+}
+.answer {
+	padding: 10px 0;
+}
+.answer label {
+	padding-left: 8px;
+}
+.begin { 
+	background-image: url(../images/default/fam/begin.png) !important; 
+	background-repeat: no-repeat; 
+}
+.end { 
+	background-image: url(../images/default/fam/end.png) !important; 
+	background-repeat: no-repeat; 
+}
+.prev { 
+	background-image: url(../images/default/fam/prev.png) !important; 
+	background-repeat: no-repeat; 
+}
+.next { 
+	background-image: url(../images/default/fam/next.png) !important; 
+	background-repeat: no-repeat; 
+}	
+.repeat { 
+	background-image: url(../images/default/fam/repeat.png) !important; 
+	background-repeat: no-repeat; 
+}
+.insert { 
+	background-image: url(../images/default/fam/note.png) !important; 
+	background-repeat: no-repeat; 
+}
+.import { 
+	background-image: url(../images/default/fam/application_put.png) !important; 
+	background-repeat: no-repeat; 
+}
+.refresh {
+	background-image: url(../images/default/fam/repeat.png) !important; 
+	background-repeat: no-repeat; 
+}
+.login { 
+	background-image: url(../images/default/fam/lock.png) !important; 
+	background-repeat: no-repeat; 
+}
+.book_open {
+	background-image: url(../images/default/fam/book_open.png) !important; 
+	background-repeat: no-repeat; 	
+}
+.reference {
+	list-style: square;
+	margin: 16px;
+}
+.reference li {
+	margin: 0 0 10px 0;
+}
+p {
+	margin: 10px 0 !important;
+}
+.Checked {
+	background: url(../images/default/fam/accept.png) top left no-repeat;	
+	width: 16px;
+	height: 16px;
+}
+.UnChecked {
+	background: none;
+	width: 16px;
+	height: 16px;	
+}

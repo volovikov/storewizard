@@ -1,0 +1,61 @@
+<div class="Mask"></div>
+<div class="Window Register" id="register-homewallet">
+	<div class="Header">
+		Зарегистрироваться
+		<div class="Button Close" title="Закрыть окно" onclick="Main.Window.OnClickClose(this);"></div>
+	</div>
+	<div class="Body">
+		<div class="Form">
+			<div class="Field">
+				<div class="Label">Выберите продукт</div>
+				<div class="Select">
+					<input type="hidden" value="homewallet" name="product" class="Hidden">
+					<input type="text" value="Домашний кошелек" style="width: 203px;" readonly class="Visible">
+					<div class="Popup">
+						<div class="Trigger" onclick="Main.Select.OnClickTrigger(this);"></div>
+						<div class="Options" style="width: 226px; margin-left: -214px; margin-top: -4px">
+							<div class="Item" value="homewallet" display="Домашний кошелек" onclick="Main.Select.OnClickItem(this);">Домашний кошелек</div>
+							<div class="Item" value="advertising" display="Рекламный бизнес" onclick="Main.Select.OnClickItem(this);">Рекламный бизнес</div>
+							<div class="Item" value="advertising" display="Риэлтор" onclick="Main.Select.OnClickItem(this);">Риэлтор</div>
+						</div>
+					</div>
+				</div>				
+			</div>		
+			<div class="Field">
+				<div class="Label">Фамилия, имя</div>
+				<input class="Input" type="text" name="name">
+				<div class="Tip"></div>
+			</div>
+			<div class="Field">
+				<div class="Label">Адрес электронной почты</div>
+				<input class="Input" type="text" name="email">
+				<div class="Tip"></div>
+			</div>
+			<div class="Field">
+				<div class="Label">Ваш телефон</div>
+				<input class="Input" type="text" name="phone">
+				<div class="Tip"></div>
+			</div>
+			<div class="Field">
+				<div class="Label">Имя компании</div>							
+				<input class="Input" type="text" name="company">
+				<div class="Tip"></div>
+			</div>
+			<div class="Field">
+				<div class="Label">Имя для входа (логин)</div>
+				<input class="Input" type="text" name="login">
+				<div class="Tip"></div>
+			</div>						
+		</div>
+		<div class="Control">
+			<div class="Buttons" align="right">
+				<div class="Button">
+					<div class="Border" onclick="Main.Form.OnClickSubmit(this)">Сохранить</div>
+				</div>
+				<div class="Button">
+					<div class="Border" onclick="Main.Window.Close('register-homewallet');">Отменить</div>
+				</div>							
+			</div>
+		</div>
+	</div>
+</div>

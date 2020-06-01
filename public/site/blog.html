@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>		
+		<div class="Center">
+			<div class="Logotip" onclick="location.href='index.html'"></div>
+			<div class="PrivateRoom">
+				<div class="Item Favorite" onclick="Main.OnClickFavorite(this);"></div>
+				<div class="Item Mailto" onclick="Main.Window.Open('form-callback');"></div>
+				<div class="Item Enter">личный кабинет</div>
+			</div>
+			<div class="Separator"></div>
+			<div class="TopMenu">
+				<div class="Item"><a href="index.html">В начало</a></div>
+				<div class="Item"><a href="solution.html">Решения</a></div>
+				<div class="Item"><a href="support.html">Поддержка</a></div>
+				<div class="Item Active"><a href="blog.html">Блог</a></div>
+			</div>			
+			<div class="TabPanel">
+				<div class="Header">
+					<div class="Item Active" onclick="Main.TabPanel.OnClickTab(0);">Бизнесу</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(1);">Как пользоваться</div>
+					<div class="Item" onclick="Main.TabPanel.OnClickTab(2);">Другое</div>
+				</div>
+				<div class="Body Blog">
+					<div class="Blog">
+						<div class="Item Active">
+							<div class="Record">
+								<h2>Зачем агентству недвижимости CRM ?</h2>
+								<div class="Short">
+									<div class="Intro">Чтобы преуспевать. А для этого нужно всегда выполнять обещания, иметь актуальные данные и позволять сотрудникам самим строить свой день – уверены в Загородном Мире</div>
+									<p>Тысячи бизнесов разных размеров строится в России вокруг продажи и аренды недвижимости. Успешность и прибыльность их в немалой степени зависит от того, как построены бизнес процессы, ответственно ли подходят сотрудники к выполнению своих функций и насколько точно выполняют агенты данные обещания. О том, как эффективно строить бизнес агентства недвижимости мы поговорили с директором по развитию компании «Загородный Мир» Ольгой Черезовой.</p>
+								</div>
+								<div class="Control">
+									<div class="Date">21 дек. 2012</div>
+									<div class="Commit">3 сообщений</div>									
+								</div>
+							</div>
+							<div class="Record">
+								<h2>Эффективное управление финансами предприятия малого бизнеса</h2>
+								<div class="Short">
+									<div class="Intro">Управление финансами малого предприятия или Виды денежных потоков</div>
+									<p>Главная задача руководителя – научиться управлять денежными потоками грамотно и стараться действовать так, чтобы постоянно улучшалось финансовое состояние компании. На практике управление финансами предприятия малого бизнеса достаточно сложный процесс, особенно, если не владеть теорией. Для тех, кто только начинает изучать эту тематику, мы предлагаем краткий обзор финансовых отношений и видов денежных потоков.</p>
+								</div>
+								<div class="Control">
+									<div class="Date">21 дек. 2012</div>
+									<div class="Commit">3 сообщений</div>									
+								</div>
+							</div>							
+						</div>
+						<div class="Item"></div>
+						<div class="Item"></div>						
+					</div>
+					<div class="News">
+						<div class="Record">
+							<h2>Апрельская акция: посоветуй Storewizard получи iPhone!</h2>
+							<div class="Short">Мы анонсируем апрельскую промо-акцию Мегаплана. Суть проста – нас часто рекомендуют друзьям, и мы решили сделать этот процесс еще более приятным! Порекомендуйте знакомым Мегаплан в апреле (они должны пройти регистрацию по вашему личному промо-коду), они сразу получат 1000 рублей на </div>
+							<div class="Control">
+								<div class="Date">21 дек. 2012</div>
+								<div class="Commit">0 сообщений</div>
+							</div>
+						</div>
+						<div class="Record">
+							<h2>Storewizard объявляет о сделке с КорусКонсалтинг</h2>
+							<div class="Short">Мы анонсируем апрельскую промо-акцию Мегаплана. Суть проста – нас часто рекомендуют друзьям, и мы решили сделать этот процесс еще более приятным! Порекомендуйте знакомым Мегаплан в апреле (они должны пройти регистрацию по вашему личному промо-коду), они сразу получат 1000 рублей на </div>
+							<div class="Control">
+								<div class="Date">21 дек. 2012</div>
+								<div class="Commit">0 сообщений</div>
+							</div>
+						</div>						
+						<div class="Record">
+							<h2>Свобода хуже, чем несвобода</h2>
+							<div class="Short">Мы анонсируем апрельскую промо-акцию Мегаплана. Суть проста – нас часто рекомендуют друзьям, и мы решили сделать этот процесс еще более приятным! Порекомендуйте знакомым Мегаплан в апреле (они должны пройти регистрацию по вашему личному промо-коду), они сразу получат 1000 рублей на </div>
+							<div class="Control">
+								<div class="Date">21 дек. 2012</div>
+								<div class="Commit">4 сообщений</div>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="Popup">
+				<script>
+					Main.Load([
+						'messages-windows.html',
+						'form-callback.html']
+					);
+				</script>
+			</div>
+			<div class="Footer">
+				<div class="FooterMenu">
+					<div class="Item"><a href="index.html">В начало</a></div>
+					<div class="Item"><a href="solution.html">Решения</a></div>
+					<div class="Item"><a href="support.html">Поддержка</a></div>
+					<div class="Item Active"><a href="blog.html">Блог</a></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>			

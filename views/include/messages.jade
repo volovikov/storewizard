@@ -1,0 +1,30 @@
+div.Mask
+div.Window.Message(id="message-info")
+	div.Header Сообщение
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Text.Info
+		div.Control
+			div.Buttons(align="center")
+				div.Button
+					div.Border(onclick="Main.Window.OnClickClose(this);") Хорошо
+div.Mask
+div.Window.Message(id="message-warning")
+	div.Header Предупреждение
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Text.Warning
+		div.Control
+			div.Buttons(align="center")
+				div.Button
+					div.Border(onclick="Main.Window.OnClickClose(this);") Хорошо
+div.Mask
+div.Window.Message(id="message-error")
+	div.Header Ошибка!
+		div.Button.Close(title="Закрыть окно", onclick="Main.Window.OnClickClose(this);")
+	div.Body
+		div.Text.Error
+		div.Control
+			div.Buttons(align="center")
+				div.Button
+					div.Border(onclick="Main.Window.OnClickClose(this);") Хорошо
