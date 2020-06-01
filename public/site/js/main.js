@@ -82,7 +82,7 @@ Main.Counter = {
 Main.Chat = {
     OnReady: function() {
         this.messages = [];
-        this.socket = io.connect('http://storewizard.ru'); //<-- тут поменять
+        this.socket = io.connect('http://localhost:8082/'); //<-- тут поменять
         this.socket.on('message', this.Recive);
         this.socket.emit('operator-status', function(response) {
             if (response.success && response.statis == 'online') {

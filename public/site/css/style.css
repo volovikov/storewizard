@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'PTSansRegular';
-    src: url('/site/css/pts55f-webfont.eot');
-    src: url('/site/css/pts55f-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/site/css/pts55f-webfont.woff') format('woff'),
-         url('/site/css/pts55f-webfont.ttf') format('truetype');
+    src: url('/css/pts55f-webfont.eot');
+    src: url('/css/pts55f-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/pts55f-webfont.woff') format('woff'),
+         url('/css/pts55f-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
